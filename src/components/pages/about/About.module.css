@@ -1,0 +1,11 @@
+.about {
+  background-color: var(--light-grey);
+  height: 50vh;
+}
+
+.about .text {
+  width: 44%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: var(--blue);
+}

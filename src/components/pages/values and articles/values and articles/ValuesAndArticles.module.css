@@ -1,0 +1,14 @@
+.page {
+  height: 200vh;
+}
+
+.page .bg1,
+.page .bg3 {
+  background-color: var(--light-grey);
+  height: 50vh;
+}
+
+.page .bg2 {
+  background-image: url(../../../../assets/values\ and\ articles/tech\ web.png);
+  height: 120vh;
+}

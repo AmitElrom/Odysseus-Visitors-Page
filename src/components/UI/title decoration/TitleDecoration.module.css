@@ -1,0 +1,14 @@
+.ui-piece {
+  width: 5%;
+  aspect-ratio: 20/1;
+  margin: 0 auto;
+  margin-top: 1%;
+  background: radial-gradient(
+    var(--cream1),
+    var(--cream2),
+    var(--cream3),
+    var(--cream4),
+    var(--cream5),
+    var(--cream6)
+  );
+}

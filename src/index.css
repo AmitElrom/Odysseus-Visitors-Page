@@ -1,13 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Assistant", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 55px;
+  color: var(--blue);
+  font-weight: 100;
+}
+
+:root {
+  --nav-height: 10vh;
+  --blue: #00497b;
+  --white: #ffffff;
+  --light-grey: #f1f2f2;
+  --cream1: #fffcd7;
+  --cream2: #fcf7ce;
+  --cream3: #eedc9e;
+  --cream4: #e5c97c;
+  --cream5: #dfbe67;
+  --cream6: #ddba60;
+  --width-blocks: 100;
 }
