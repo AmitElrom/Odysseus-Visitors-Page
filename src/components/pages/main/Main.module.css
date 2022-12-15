@@ -1,0 +1,36 @@
+.main {
+  width: 100%;
+  background-color: var(--light-grey);
+}
+
+.main img {
+  width: 101%;
+}
+
+.main h1 {
+  text-align: right;
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  font-size: 5rem;
+}
+
+.main h1 .title1 {
+  font-weight: 900;
+  color: white;
+}
+
+.main h1 .title2 {
+  font-weight: 200;
+  background: radial-gradient(
+    var(--cream1),
+    var(--cream2),
+    var(--cream3),
+    var(--cream4),
+    var(--cream5),
+    var(--cream6)
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: none;
+}
