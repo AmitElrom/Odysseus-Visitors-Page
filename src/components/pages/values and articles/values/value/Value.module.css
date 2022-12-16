@@ -1,0 +1,13 @@
+.value {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 3px 3px 3px #231f2033;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  color: var(--blue);
+  text-align: right;
+}
+
+.triangle {
+  float: left;
+}

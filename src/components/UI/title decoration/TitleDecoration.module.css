@@ -1,6 +1,5 @@
 .ui-piece {
-  width: 5%;
-  aspect-ratio: 20/1;
+  height: 0.5vh;
   margin: 0 auto;
   margin-top: 1%;
   background: radial-gradient(

@@ -1,0 +1,4 @@
+.values {
+  width: var(--width-blocks);
+  margin: 0 auto;
+}

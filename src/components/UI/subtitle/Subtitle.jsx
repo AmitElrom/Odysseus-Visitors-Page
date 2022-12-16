@@ -5,7 +5,7 @@ import TitleDecoration from "../title decoration/TitleDecoration";
 const Subtitle = ({ subtitle }) => {
   return (
     <Fragment>
-      <h1 className="subtitle">{subtitle}</h1>
+      <h2 className="subtitle">{subtitle}</h2>
       <TitleDecoration />
     </Fragment>
   );
