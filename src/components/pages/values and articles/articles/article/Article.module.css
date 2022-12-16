@@ -1,0 +1,12 @@
+.article {
+  width: 20%;
+  aspect-ratio: 397/223;
+}
+
+.img {
+  scale: 0.6;
+}
+
+.span {
+  display: block;
+}

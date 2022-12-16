@@ -1,9 +1,17 @@
 .title {
   font-weight: 400;
-  font-size: larger;
   font-size: 1.8rem;
+  margin-bottom: 2%;
 }
 
-.undeline {
-  width: 60%;
+@media (width < 1380px) {
+  .title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (width < 1267px) {
+  .title {
+    font-size: 1.4rem;
+  }
 }

@@ -10,10 +10,13 @@ const Value = ({ title, text1, text2, icon }) => {
   return (
     <div className={classes.value}>
       <ValueBlueTriangle className={classes.triangle} />
-      <ValueTitle title={title} />
-      <div>
-        <p>{text1}</p>
-        <p>{text2}</p>
+      {/* <div className={classes.icon}>{icon}</div> */}
+      <div className={classes.data}>
+        <ValueTitle title={title} />
+        <div>
+          <p>{text1}</p>
+          <p>{text2}</p>
+        </div>
       </div>
     </div>
   );

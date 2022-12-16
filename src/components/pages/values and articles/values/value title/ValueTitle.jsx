@@ -8,7 +8,7 @@ const ValueTitle = ({ title }) => {
   return (
     <div>
       <h3 className={classes.title}>{title}</h3>
-      <TitleDecoration className={classes.underline} aspectRatio={"134.33/2"} />
+      <TitleDecoration width="60%" aspectRatio={"27/1"} />
     </div>
   );
 };
