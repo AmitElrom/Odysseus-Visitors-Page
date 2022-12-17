@@ -7,7 +7,7 @@ import classes from "./Articles.module.css";
 const Articles = () => {
   return (
     <div className={classes.articles}>
-      <Subtitle subtitle="מאמרים" />
+      <Subtitle subtitle="מאמרים" id="מאמרים" />
       <TheArticles />
     </div>
   );

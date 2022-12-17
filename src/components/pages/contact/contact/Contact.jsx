@@ -15,7 +15,11 @@ const Contact = () => {
         alt="contact blue tech background"
       />
       <div className={classes.data}>
-        <Subtitle subtitle="יצירת קשר" className={classes.headline} />
+        <Subtitle
+          subtitle="יצירת קשר"
+          id="יצירת קשר"
+          className={classes.headline}
+        />
         <ContactForm />
         <div className={classes["contact-details"]}>
           <span>ליאור - </span>

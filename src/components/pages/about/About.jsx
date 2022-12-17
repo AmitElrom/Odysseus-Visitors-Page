@@ -6,7 +6,7 @@ import classes from "./About.module.css";
 const About = () => {
   return (
     <div className={classes.about}>
-      <Subtitle subtitle="אודותינו" />
+      <Subtitle subtitle="אודותינו" id="אודות" />
       <div className={classes.text}>
         <p>
           מנהלי הקרן מנתחים את שווקי המניות ברחבי העולם. הקרן סוחרת רק בניירות

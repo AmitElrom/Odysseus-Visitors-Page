@@ -7,7 +7,7 @@ import classes from "./Values.module.css";
 const Values = () => {
   return (
     <div className={classes.values}>
-      <Subtitle subtitle="ערכי הקרן" />
+      <Subtitle subtitle="ערכי הקרן" id="ערכי הקרן" />
       <TheValues />
     </div>
   );

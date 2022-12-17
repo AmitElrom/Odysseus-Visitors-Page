@@ -4,10 +4,12 @@ import TitleDecoration from "../title decoration/TitleDecoration";
 
 import classes from "./Subtitle.module.css";
 
-const Subtitle = ({ subtitle, className }) => {
+const Subtitle = ({ subtitle, className, id }) => {
   return (
     <Fragment>
-      <h2 className={`subtitle ${className}`}>{subtitle}</h2>
+      <h2 id={id} className={`subtitle ${className}`}>
+        {subtitle}
+      </h2>
       <TitleDecoration className={classes.underline} />
     </Fragment>
   );

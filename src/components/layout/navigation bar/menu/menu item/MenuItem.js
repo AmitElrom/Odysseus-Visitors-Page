@@ -9,7 +9,7 @@ const MenuItem = ({ title }) => {
   return (
     <Fragment>
       {title !== "/" ? (
-        <Link to={title} spy={true} smooth={true} className={menuItemClasses}>
+        <Link to={title} spy={true} smooth={true} offset={-100} duration={500} className={menuItemClasses}>
           {title}
         </Link>
       ) : (
