@@ -5,6 +5,7 @@ import classes from "./Contact.module.css";
 
 import backgroundTechImg from "../../../../assets/contact/background.png";
 import ContactForm from "../form/form/ContactForm";
+import ButtonMailto from "./button mail to/ButtonMailTo";
 
 const Contact = () => {
   return (
@@ -23,7 +24,12 @@ const Contact = () => {
         <ContactForm />
         <div className={classes["contact-details"]}>
           <span>ליאור - </span>
-          <span>lior@odysseus-hedgefunds.com</span>
+          <span className={classes["contact-details-email"]}>
+            <ButtonMailto
+              mailto="mailto:lior@odysseus-hedgefunds.com"
+              label="lior@odysseus-hedgefunds.com"
+            />
+          </span>
           <span className={classes["contact-details-slash"]}>/</span>
           <span>052-2803699</span>
         </div>

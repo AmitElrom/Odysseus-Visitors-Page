@@ -44,3 +44,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: none;
 }
+
+.contact-details-email {
+  cursor: pointer;
+}
