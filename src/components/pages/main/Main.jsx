@@ -6,7 +6,7 @@ import treesImg from "../../../assets/main/trees.png";
 
 const Main = () => {
   return (
-    <div className={classes.main}>
+    <div id="ראשי" className={classes.main}>
       <img src={treesImg} alt="trees" />
       <h1>
         <div className={classes.title1}>קרן אודיסאוס</div>
