@@ -1,14 +1,23 @@
 .page {
   height: 200vh;
+  width: 100%;
 }
 
-.page .bg1,
-.page .bg3 {
+.data {
+  width: 60%;
+}
+
+.bg1 {
   background-color: var(--light-grey);
   height: 50vh;
 }
 
-.page .bg2 {
+.bg2 {
   background-image: url(../../../../assets/values\ and\ articles/tech\ web.png);
-  height: 120vh;
+  height: 150vh;
+}
+
+.bg3 {
+  background-color: var(--light-grey);
+  height: 60vh;
 }
