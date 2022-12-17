@@ -1,11 +1,14 @@
 .article {
-  width: 27%;
+  /* width: 27%; */
   aspect-ratio: 397/223;
   margin: 1rem;
   text-align: right;
   color: var(--blue);
-  position: relative;
   background-color: transparent;
+}
+
+.data {
+  padding: 0 1.2rem;
 }
 
 .img-div {
@@ -21,9 +24,7 @@
 }
 
 .button-read-more-div {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  margin-top: 0;
 }
 
 .button-read-more-div button {

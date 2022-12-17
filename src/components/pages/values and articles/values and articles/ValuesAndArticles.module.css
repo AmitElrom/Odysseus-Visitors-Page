@@ -7,13 +7,17 @@
   width: 60%;
 }
 
-.bg1,
-.bg3 {
+.bg1 {
   background-color: var(--light-grey);
   height: 50vh;
 }
 
 .bg2 {
   background-image: url(../../../../assets/values\ and\ articles/tech\ web.png);
-  height: 120vh;
+  height: 150vh;
+}
+
+.bg3 {
+  background-color: var(--light-grey);
+  height: 60vh;
 }
