@@ -1,12 +1,36 @@
 .article {
-  width: 20%;
+  width: 27%;
   aspect-ratio: 397/223;
+  margin: 1rem;
+  text-align: right;
+  color: var(--blue);
+  position: relative;
+  background-color: transparent;
+}
+
+.img-div {
+  text-align: center;
 }
 
 .img {
-  scale: 0.6;
+  width: 100%;
 }
 
 .span {
   display: block;
+}
+
+.button-read-more-div {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.button-read-more-div button {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
 }
