@@ -4,11 +4,10 @@ import Value from "../value/Value";
 
 import classes from "./TheValues.module.css";
 
-import { ReactComponent as LearningIcon } from "../../../../../assets/values and articles/values/learning icon.svg";
-import { ReactComponent as IntegrityIcon } from "../../../../../assets/values and articles/values/integrity icon.svg";
-import { ReactComponent as CreativityIcon } from "../../../../../assets/values and articles/values/creativity icon.svg";
-import { ReactComponent as TriumphIcon } from "../../../../../assets/values and articles/values/triumph icon.svg";
-import Values from "../values/Values";
+import { ReactComponent as LearningIcon } from "../../../../../../assets/values and articles/values/learning icon.svg";
+import { ReactComponent as IntegrityIcon } from "../../../../../../assets/values and articles/values/integrity icon.svg";
+import { ReactComponent as CreativityIcon } from "../../../../../../assets/values and articles/values/creativity icon.svg";
+import { ReactComponent as TriumphIcon } from "../../../../../../assets/values and articles/values/triumph icon.svg";
 
 const VALUES = [
   {

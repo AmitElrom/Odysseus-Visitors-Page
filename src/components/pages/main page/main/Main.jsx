@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./Main.module.css";
 
-import treesImg from "../../../assets/main/trees.png";
+import treesImg from "../../../../assets/main/trees.png";
 
 const Main = () => {
   return (

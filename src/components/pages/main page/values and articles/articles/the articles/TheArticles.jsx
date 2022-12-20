@@ -2,12 +2,12 @@ import React from "react";
 
 import classes from "./TheArticles.module.css";
 
-import chooseInvestmentImg from "../../../../../assets/values and articles/articles/choose investment.png";
-import mediaInfluenceImg from "../../../../../assets/values and articles/articles/media influence.png";
-import futureImg from "../../../../../assets/values and articles/articles/future.png";
-import bubbleImg from "../../../../../assets/values and articles/articles/bubble.png";
-import smartOrGambleImg from "../../../../../assets/values and articles/articles/smart or gamble.png";
-import interestImg from "../../../../../assets/values and articles/articles/interest.png";
+import chooseInvestmentImg from "../../../../../../assets/values and articles/articles/choose investment.png";
+import mediaInfluenceImg from "../../../../../../assets/values and articles/articles/media influence.png";
+import futureImg from "../../../../../../assets/values and articles/articles/future.png";
+import bubbleImg from "../../../../../../assets/values and articles/articles/bubble.png";
+import smartOrGambleImg from "../../../../../../assets/values and articles/articles/smart or gamble.png";
+import interestImg from "../../../../../../assets/values and articles/articles/interest.png";
 import Article from "../article/Article";
 
 const ARTICLES = [

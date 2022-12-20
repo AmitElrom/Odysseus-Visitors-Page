@@ -1,9 +1,9 @@
 import React from "react";
-import Subtitle from "../../../UI/subtitle/Subtitle";
+import Subtitle from "../../../../UI/subtitle/Subtitle";
 
 import classes from "./Contact.module.css";
 
-import backgroundTechImg from "../../../../assets/contact/background.png";
+import backgroundTechImg from "../../../../../assets/contact/background.png";
 import ContactForm from "../form/form/ContactForm";
 import ButtonMailto from "./button mail to/ButtonMailTo";
 

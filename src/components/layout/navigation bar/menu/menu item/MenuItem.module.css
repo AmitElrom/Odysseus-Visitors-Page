@@ -1,5 +1,8 @@
 .menu-item {
   margin-left: 1rem;
+  height: max-content;
+  position: relative;
+  top: 65%;
 }
 
 .menu-item-title {

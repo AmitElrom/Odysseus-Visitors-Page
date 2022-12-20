@@ -1,5 +1,5 @@
 import React from "react";
-import Subtitle from "../../../../UI/subtitle/Subtitle";
+import Subtitle from "../../../../../UI/subtitle/Subtitle";
 import TheValues from "../the values/TheValues";
 
 import classes from "./Values.module.css";

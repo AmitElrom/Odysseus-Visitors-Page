@@ -1,5 +1,5 @@
 import React from "react";
-import Subtitle from "../../../../UI/subtitle/Subtitle";
+import Subtitle from "../../../../../UI/subtitle/Subtitle";
 import TheArticles from "../the articles/TheArticles";
 
 import classes from "./Articles.module.css";

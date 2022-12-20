@@ -1,6 +1,6 @@
 import React from "react";
 
-import TitleDecoration from "../../../../UI/title decoration/TitleDecoration";
+import TitleDecoration from "../../../../../UI/title decoration/TitleDecoration";
 
 import classes from "./ValueTitle.module.css";
 
