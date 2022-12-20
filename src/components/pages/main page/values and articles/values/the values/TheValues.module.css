@@ -1,5 +1,21 @@
 .values {
   margin-top: 2%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   justify-content: center;
+}
+
+@media (width <= 1250px) {
+  .values {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media (width <= 800px) {
+  .values {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }

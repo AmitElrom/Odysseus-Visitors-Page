@@ -3,6 +3,32 @@
   flex-direction: row;
   justify-content: space-between;
   width: 60%;
+  height: var(--nav-height);
   margin: 0 auto;
   color: var(--blue);
+  padding: 1% 0;
+}
+
+@media (width <= 1150px) {
+  .data {
+    width: 70%;
+  }
+}
+
+@media (width <= 950px) {
+  .data {
+    width: 80%;
+  }
+}
+
+@media (width <= 750px) {
+  .data {
+    width: 90%;
+  }
+}
+
+@media (width <= 700px) {
+  .data {
+    width: 95%;
+  }
 }

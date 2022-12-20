@@ -1,6 +1,24 @@
 .articles {
-  padding-top: 50vh;
   background-color: inherit;
-  max-width: var(--width-blocks);
   margin: 0 auto;
+  margin-top: var(--comp-margin-top);
+  margin-bottom: var(--comp-margin-bottom);
 }
+
+/* @media (1160px <= width <= 1250px) {
+  .articles {
+    margin-top: 10vh;
+  }
+}
+
+@media (1100px <= width < 1160px) {
+  .articles {
+    margin-top: 15vh;
+  }
+}
+
+@media (1000px <= width < 1100px) {
+  .articles {
+    margin-top: 20vh;
+  }
+} */

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap");
 
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: "Assistant", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,6 +19,34 @@ code {
   font-weight: 100;
 }
 
+.blocks {
+  width: 70%;
+}
+
+@media (width <= 1400px) {
+  .blocks {
+    width: 80%;
+  }
+}
+
+@media (width <= 1300px) {
+  .blocks {
+    width: 85%;
+  }
+}
+
+@media (width <= 1150px) {
+  .blocks {
+    width: 90%;
+  }
+}
+
+@media (width <= 1150px) {
+  .blocks {
+    width: 95%;
+  }
+}
+
 :root {
   --nav-height: 10vh;
   --footer-height: 15vh;
@@ -31,5 +59,6 @@ code {
   --cream4: #e5c97c;
   --cream5: #dfbe67;
   --cream6: #ddba60;
-  --width-blocks: 70%;
+  --comp-margin-top: 3rem;
+  --comp-margin-bottom: 3rem;
 }

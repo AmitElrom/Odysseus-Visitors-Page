@@ -6,7 +6,7 @@ import classes from "./Articles.module.css";
 
 const Articles = () => {
   return (
-    <div className={classes.articles}>
+    <div className={`blocks ${classes.articles}`}>
       <Subtitle subtitle="מאמרים" id="מאמרים" />
       <TheArticles />
     </div>

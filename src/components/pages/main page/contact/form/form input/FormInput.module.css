@@ -13,7 +13,7 @@
 
 .form-input textarea {
   resize: none;
-  aspect-ratio: 217/30;
+  aspect-ratio: 217/25;
   font-size: 1.2rem;
   border: none;
   width: 100%;
@@ -34,4 +34,9 @@
 .form-input textarea:-webkit-autofill:focus,
 .form-input textarea:-webkit-autofill:active {
   background-color: var(--light-grey);
+}
+
+.form-input p {
+  margin: 1px inherit;
+  padding: 1px inherit;
 }

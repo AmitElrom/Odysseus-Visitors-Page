@@ -6,7 +6,7 @@ import classes from "./Values.module.css";
 
 const Values = () => {
   return (
-    <div className={classes.values}>
+    <div className={`blocks ${classes.values}`}>
       <Subtitle subtitle="ערכי הקרן" id="ערכי הקרן" />
       <TheValues />
     </div>

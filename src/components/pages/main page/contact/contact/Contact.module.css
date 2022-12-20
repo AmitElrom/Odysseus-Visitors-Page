@@ -1,7 +1,19 @@
 .contact {
-  margin-top: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--light-grey);
+  background: url(../../../../../assets/contact/background.png);
   position: relative;
+  margin: 0 auto;
+
+  /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .contact .img {
@@ -9,12 +21,32 @@
 }
 
 .contact .data {
-  position: absolute;
   width: 100%;
-  top: 60vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
+
+@media (width <=1250px) {
+  .contact .data {
+    scale: 0.7;
+  }
+}
+
+/* @media (width >= 1700px) and (height >=900px) {
+  .contact .data {
+    top: 45vh;
+  }
+}
+
+@media (1450px <= width < 1700px) {
+  .contact .data {
+    top: 48vh;
+  }
+}
+
+@media (1300px <= width < 1450px) {
+  .contact .data {
+    top: 50vh;
+  }
+} */
 
 .contact .data .headline {
   color: var(--white);
@@ -23,6 +55,12 @@
 .contact-details {
   color: var(--white);
 }
+
+/* @media (1000px <= width < 1300px) {
+  .contact .data {
+    top: 42vh;
+  }
+} */
 
 .contact-details-slash {
   margin: 0 1rem;

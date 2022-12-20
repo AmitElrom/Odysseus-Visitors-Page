@@ -3,5 +3,22 @@
   display: flex;
   flex-direction: row;
   font-size: 19px;
-  padding-bottom: 0;
+}
+
+@media (height >= 1700px) and (width >= 3000px) {
+  .menu {
+    font-size: 60px;
+  }
+}
+
+@media (width <= 615px) {
+  .menu {
+    font-size: 15px;
+  }
+}
+
+@media (width <= 500px) {
+  .menu {
+    font-size: 13px;
+  }
 }

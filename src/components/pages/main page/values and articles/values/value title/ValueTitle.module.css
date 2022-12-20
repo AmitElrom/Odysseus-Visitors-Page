@@ -4,7 +4,7 @@
   margin-bottom: 2%;
 }
 
-@media (width < 1380px) {
+/* @media (width < 1380px) {
   .title {
     font-size: 1.6rem;
   }
@@ -14,4 +14,4 @@
   .title {
     font-size: 1.4rem;
   }
-}
+} */

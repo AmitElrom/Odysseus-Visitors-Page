@@ -1,9 +1,4 @@
 .logo {
-  position: static;
-}
-
-@media (height <= 900px) {
-  .logo {
-    scale: 0.7;
-  }
+  scale: 0.9;
+  display: flex;
 }

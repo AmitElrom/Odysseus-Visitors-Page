@@ -9,12 +9,12 @@ import ButtonMailto from "./button mail to/ButtonMailTo";
 
 const Contact = () => {
   return (
-    <div className={classes.contact}>
-      <img
+    <div className={`${classes.contact}`}>
+      {/* <img
         className={classes.img}
         src={backgroundTechImg}
         alt="contact blue tech background"
-      />
+      /> */}
       <div className={classes.data}>
         <Subtitle
           subtitle="יצירת קשר"

@@ -1,4 +1,23 @@
 .values {
-  width: var(--width-blocks);
   margin: 0 auto;
+  margin-top: var(--comp-margin-top);
+  margin-bottom: var(--comp-margin-bottom);
 }
+
+/* @media (1450px <= width < 1700px) and (800px <= height < 900px) {
+  .values {
+    margin-top: -10vh;
+  }
+}
+
+@media (1000px <= width < 1450px) and (700px <= height < 800px) {
+  .values {
+    margin-top: -10vh;
+  }
+}
+
+@media (800px <= width <= 1200px) {
+  .values {
+    width: calc(var(--width-blocks) + 10%);
+  }
+} */

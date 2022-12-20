@@ -60,12 +60,14 @@ const ContactForm = () => {
   });
 
   return (
-    <form className={classes.form} onSubmit={formik.handleSubmit}>
-      <div className={classes.inputs}>{formInputsList}</div>
-      <div className={classes["button-div"]}>
-        <button type="submit">שלח</button>
-      </div>
-    </form>
+    <div className={classes.div}>
+      <form className={classes.form} onSubmit={formik.handleSubmit}>
+        <div className={classes.inputs}>{formInputsList}</div>
+        <div className={classes["button-div"]}>
+          <button type="submit">שלח</button>
+        </div>
+      </form>
+    </div>
   );
 };
 

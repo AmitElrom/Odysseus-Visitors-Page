@@ -1,6 +1,6 @@
 .about {
-  background-color: var(--light-grey);
-  height: 50vh;
+  margin-top: var(--comp-margin-top);
+  margin-bottom: var(--comp-margin-bottom);
 }
 
 .about .text {
@@ -9,3 +9,24 @@
   font-size: 1.2rem;
   color: var(--blue);
 }
+
+/* @media (width >= 1700px) and (height >=900px) {
+  .about {
+    height: 40vh;
+  }
+  .about .text {
+    font-size: 26px;
+  }
+}
+
+@media (width <= 1030px) {
+  .about {
+    margin-bottom: 10vh;
+  }
+}
+
+@media (width <= 1030px) {
+  .about {
+    margin-bottom: 0;
+  }
+} */
