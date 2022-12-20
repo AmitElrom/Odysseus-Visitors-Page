@@ -4,12 +4,12 @@ import { Link, scroller } from "react-scroll";
 
 import classes from "./MenuItem.module.css";
 
-const MenuItem = ({ title }) => {
+const MenuItem = ({ title, isMobile }) => {
 
   const navigate = useNavigate();
 
-  const menuItemClasses = `${classes["menu-item"]} ${title !== "/" ? classes["menu-item-title"] : undefined
-    }`;
+  const menuItemClasses = !isMobile ? `${classes["menu-item"]} ${title !== "/" ? classes["menu-item-title"] : undefined
+    }` : classes["menu-item-mobile"];
 
   const clickMenuItemHandler = () => {
     sessionStorage.setItem("main-page-scroll-to", title);

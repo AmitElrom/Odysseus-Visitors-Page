@@ -15,12 +15,18 @@ const TITLES = [
   "יצירת קשר",
 ];
 
-const Menu = () => {
-  const titlesList = TITLES.map((title) => {
-    return <MenuItem key={title} title={title} />;
-  });
+const Menu = ({ isMobile }) => {
+  const titlesList = !isMobile
+    ? TITLES.map((title) => {
+        return <MenuItem key={title} title={title} />;
+      })
+    : TITLES.filter((title) => title !== "/").map((title) => {
+        return <MenuItem isMobile={isMobile} key={title} title={title} />;
+      });
 
-  return <ul className={classes.menu}>{titlesList}</ul>;
+  const menuClasses = !isMobile ? classes.menu : classes["menu-mobile"];
+
+  return <ul className={menuClasses}>{titlesList}</ul>;
 };
 
 export default Menu;

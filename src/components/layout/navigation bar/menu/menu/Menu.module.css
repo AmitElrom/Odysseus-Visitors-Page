@@ -22,3 +22,10 @@
     font-size: 13px;
   }
 }
+
+.menu-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 0;
+}

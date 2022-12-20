@@ -8,3 +8,13 @@
 .menu-item-title {
   cursor: pointer;
 }
+
+.menu-item-mobile {
+  color: var(--blue);
+  padding: 0.2rem 100%;
+  transition: background 400ms;
+}
+
+.menu-item-mobile:hover {
+  background-color: rgb(185, 185, 245);
+}

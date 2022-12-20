@@ -55,6 +55,13 @@
   }
 }
 
+@media (width <= 428px) {
+  .main h1 {
+    top: 12%;
+    font-size: 1rem;
+  }
+}
+
 /* @media (1000px <= width <= 1200px) {
   .main h1 {
     font-size: 70px;
