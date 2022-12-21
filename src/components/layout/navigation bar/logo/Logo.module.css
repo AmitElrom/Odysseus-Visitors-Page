@@ -2,3 +2,7 @@
   scale: 0.9;
   display: flex;
 }
+
+.logo img {
+  cursor: pointer;
+}

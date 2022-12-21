@@ -10,6 +10,7 @@ const MenuContextProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
+    sessionStorage.removeItem("main-page-scroll-to");
     setIsMenuOpen((prevVal) => !prevVal);
   };
 

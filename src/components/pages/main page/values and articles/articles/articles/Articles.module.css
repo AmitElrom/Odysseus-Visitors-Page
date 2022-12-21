@@ -3,6 +3,7 @@
   margin: 0 auto;
   margin-top: var(--comp-margin-top);
   margin-bottom: var(--comp-margin-bottom);
+  position: relative;
 }
 
 /* @media (1160px <= width <= 1250px) {
