@@ -8,12 +8,12 @@
   margin: 0 auto;
 
   /* Full height */
-  height: 100vh;
-
+  height: 120vh;
+  width: 100%;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .contact .img {
@@ -22,38 +22,39 @@
 
 .contact .data {
   width: 100%;
+  top: 5vh;
 }
 
 @media (width <= 1250px) {
+  .contact {
+    background-size: auto;
+    height: 105vh;
+  }
   .contact .data {
     position: relative;
     top: 5vh;
   }
 }
 
-/* @media (width <=1250px) {
-  .contact .data {
-    scale: 0.7;
+@media (width <= 1000px) {
+  .contact {
+    margin-bottom: -10vh;
   }
-} */
-
-/* @media (width >= 1700px) and (height >=900px) {
   .contact .data {
-    top: 45vh;
+    position: relative;
+    top: 0;
   }
 }
 
-@media (1450px <= width < 1700px) {
+@media (width <= 850px) {
+  .contact {
+    margin-bottom: -15vh;
+  }
   .contact .data {
-    top: 48vh;
+    position: relative;
+    top: -5vh;
   }
 }
-
-@media (1300px <= width < 1450px) {
-  .contact .data {
-    top: 50vh;
-  }
-} */
 
 .contact .data .headline {
   color: var(--white);
