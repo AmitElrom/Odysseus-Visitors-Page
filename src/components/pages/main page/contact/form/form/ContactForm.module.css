@@ -2,11 +2,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .form {
   width: 50%;
   margin: 0 auto;
+}
+
+@media (width <= 1250px) {
+  .div {
+    transform: scale(0.7);
+    margin-top: -5vh;
+    margin-bottom: -5vh;
+  }
+  .form {
+    width: 80%;
+  }
+}
+
+@media (width <= 550px) {
+  .form {
+    width: 90%;
+  }
+}
+
+@media (width <= 550px) {
+  .form {
+    width: 100%;
+  }
 }
 
 /* @media (1000px <= width < 1300px) {

@@ -13,7 +13,7 @@
   }
 }
 
-@media (width <= 800px) {
+@media (width <= 860px) {
   .values {
     grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr 1fr 1fr;

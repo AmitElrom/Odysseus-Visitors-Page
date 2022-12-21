@@ -1,17 +1,26 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 import ValueTitle from "../value title/ValueTitle";
 
 import classes from "./Value.module.css";
 
-import { ReactComponent as ValueBlueTriangle } from "../../../../../../assets/values and articles/values/value blue triangle.svg";
+const Value = ({ title, text1, text2, Icon, IconMobile }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 429);
 
-const Value = ({ title, text1, text2, icon }) => {
+  const updateMedia = () => {
+    setIsMobile(window.innerWidth < 429);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
+
   return (
     <div className={classes.value}>
-      <ValueBlueTriangle className={classes.triangle} />
+      {isMobile ? <IconMobile /> : <Icon className={classes.triangle} />}
       <div className={classes.data}>
-        <ValueTitle title={title} />
+        {!isMobile && <ValueTitle title={title} />}
         <div>
           <p>{text1}</p>
           <p>{text2}</p>

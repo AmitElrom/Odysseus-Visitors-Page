@@ -12,13 +12,6 @@ code {
     monospace;
 }
 
-.subtitle {
-  margin: 0;
-  font-size: 55px;
-  color: var(--blue);
-  font-weight: 100;
-}
-
 .blocks {
   width: 70%;
 }

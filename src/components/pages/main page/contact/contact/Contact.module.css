@@ -24,11 +24,18 @@
   width: 100%;
 }
 
-@media (width <=1250px) {
+@media (width <= 1250px) {
+  .contact .data {
+    position: relative;
+    top: 5vh;
+  }
+}
+
+/* @media (width <=1250px) {
   .contact .data {
     scale: 0.7;
   }
-}
+} */
 
 /* @media (width >= 1700px) and (height >=900px) {
   .contact .data {
@@ -54,6 +61,18 @@
 
 .contact-details {
   color: var(--white);
+}
+
+@media (width <= 420px) {
+  .contact-details {
+    font-size: 14px;
+  }
+}
+
+@media (width <= 420px) {
+  .contact-details {
+    font-size: 12px;
+  }
 }
 
 /* @media (1000px <= width < 1300px) {

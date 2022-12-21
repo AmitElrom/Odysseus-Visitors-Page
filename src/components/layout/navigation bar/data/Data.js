@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { menuContext } from "../../../../store/menu-context";
 
 import Logo from "../logo/Logo";
 import Menu from "../menu/menu/Menu";
@@ -6,12 +7,14 @@ import ToggleButton from "../toggle button/ToggleButton";
 
 import classes from "./Data.module.css";
 
-const Data = ({ onToggleMenu, isMenuOpen }) => {
+const Data = () => {
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 428);
+  const { toggleMenu } = useContext(menuContext);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 560);
 
   const updateMedia = () => {
-    setIsMobile(window.innerWidth < 428);
+    setIsMobile(window.innerWidth < 560);
   };
 
   useEffect(() => {
@@ -21,7 +24,7 @@ const Data = ({ onToggleMenu, isMenuOpen }) => {
 
   return (
     <div className={classes.data}>
-      {!isMobile ? <Menu /> : <ToggleButton onClick={onToggleMenu} isMenuOpen={isMenuOpen} />}
+      {!isMobile ? <Menu /> : <ToggleButton onClick={toggleMenu} />}
       <Logo />
     </div>
   );
