@@ -7,8 +7,23 @@
   background-color: transparent;
 }
 
+.article-mobile {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 3px 3px 3px #231f2033;
+  margin: 1rem;
+  color: var(--blue);
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
 .data {
   padding: 0 1.2rem;
+}
+
+.data-mobile h3 {
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .data p {

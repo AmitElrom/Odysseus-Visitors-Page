@@ -22,7 +22,9 @@ const FormInput = ({
         ></textarea>
       ) : (
         <input
-          className={classes.input}
+          className={`${classes.input} ${
+            error ? classes["input-field-error"] : ""
+          }`}
           type={type && type}
           placeholder={placeholder}
           name={name}

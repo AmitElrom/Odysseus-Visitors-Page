@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { menuContext } from "../../../../store/menu-context";
+import { screenSizeContext } from "../../../../store/screen-size-context";
 
 import Logo from "../logo/Logo";
 import Menu from "../menu/menu/Menu";
@@ -10,17 +11,7 @@ import classes from "./Data.module.css";
 const Data = () => {
 
   const { toggleMenu } = useContext(menuContext);
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 560);
-
-  const updateMedia = () => {
-    setIsMobile(window.innerWidth < 560);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  });
+  const { isMobile } = useContext(screenSizeContext);
 
   return (
     <div className={classes.data}>

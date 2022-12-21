@@ -10,11 +10,16 @@
 }
 
 .menu-item-mobile {
-  color: var(--blue);
-  padding: 0.2rem 100%;
+  color: var(--cream6);
+  width: 90%;
+  text-align: center;
+  padding: 0.2rem;
   transition: background 400ms;
+  border-bottom: 2px solid var(--blue);
 }
 
 .menu-item-mobile:hover {
-  background-color: rgb(185, 185, 245);
+  color: var(--white);
+  border-bottom: none;
+  background-color: var(--blue);
 }

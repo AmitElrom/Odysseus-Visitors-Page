@@ -5,11 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter } from "react-router-dom";
+import ScreenSizeContextProvider from "./store/screen-size-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <App />
+    <ScreenSizeContextProvider>
+      <App />
+    </ScreenSizeContextProvider>
   </BrowserRouter>
 );
 

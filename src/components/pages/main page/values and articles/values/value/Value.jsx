@@ -1,24 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment, useContext } from "react";
+import { screenSizeContext } from "../../../../../../store/screen-size-context";
 
 import ValueTitle from "../value title/ValueTitle";
 
 import classes from "./Value.module.css";
 
 const Value = ({ title, text1, text2, Icon, IconMobile }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 429);
-
-  const updateMedia = () => {
-    setIsMobile(window.innerWidth < 429);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  });
+  const { isMobile } = useContext(screenSizeContext);
 
   return (
-    <div className={classes.value}>
-      {isMobile ? <IconMobile /> : <Icon className={classes.triangle} />}
+    <div
+      className={`${classes.value} ${
+        isMobile ? classes["value-mobile"] : undefined
+      }`}
+    >
+      {isMobile ? (
+        <div className={classes["triangle-mobile"]}>
+          <IconMobile />
+          <h3>{title}</h3>
+        </div>
+      ) : (
+        <Icon className={classes.triangle} />
+      )}
+
       <div className={classes.data}>
         {!isMobile && <ValueTitle title={title} />}
         <div>
