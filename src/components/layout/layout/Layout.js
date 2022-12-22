@@ -3,6 +3,7 @@ import MenuContextProvider from "../../../store/menu-context";
 
 import NavigationBar from "../navigation bar/navigation bar/NavigationBar";
 import Footer from "../footer/Footer";
+import BackToTopButton from "../../UI/back to top button/BackToTopButton";
 
 const Layout = ({ children, dir, className }) => {
   return (
@@ -12,6 +13,7 @@ const Layout = ({ children, dir, className }) => {
       </MenuContextProvider>
       <main className={className}>{children}</main>
       <Footer />
+      <BackToTopButton />
     </div>
   );
 };

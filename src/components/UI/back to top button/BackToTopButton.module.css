@@ -1,0 +1,13 @@
+.button {
+  border: 3px solid var(--cream6);
+  color: var(--cream6);
+  border-radius: 50%;
+  padding: 1rem;
+  font-weight: 900;
+  position: fixed;
+  z-index: 100;
+  cursor: pointer;
+  background-color: white;
+  right: 1vw;
+  bottom: 1vh;
+}

@@ -5,7 +5,11 @@ import classes from "./ArticlePage.module.css";
 
 const ArticlePage = () => {
   const { articleId } = useParams();
-  return <div className={classes.article}>hello</div>;
+  return (
+    <div className={classes.article}>
+      <h1>כותרת</h1>
+    </div>
+  );
 };
 
 export default ArticlePage;
