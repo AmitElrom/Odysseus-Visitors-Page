@@ -15,18 +15,12 @@
   font-size: 16px;
 }
 
-.data {
-  shape-outside: url(../../../../../../assets/values\ and\ articles/values/value\ blue\ triangle.svg);
-  shape-margin: 1rem;
-}
-
 .triangle {
   width: 50%;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
   margin-right: 1rem;
-  text-align: center;
+  float: left;
+  shape-outside: url("../../../../../../assets/values and articles/values/value\ blue\ triangle.svg");
+  shape-margin: 1.5rem;
 }
 
 .triangle-mobile {
@@ -50,6 +44,11 @@
     aspect-ratio: 373/220;
     margin-bottom: 1rem;
   }
+  .triangle {
+    float: left;
+    shape-outside: url("../../../../../../assets/values and articles/values/value\ blue\ triangle.svg");
+    shape-margin: 6rem;
+  }
 }
 
 @media (width <= 1000px) {
@@ -59,9 +58,9 @@
   }
 }
 
-@media (width <= 900px) {
+@media (width <= 960px) {
   .value {
-    aspect-ratio: 300/220;
+    aspect-ratio: 260/220;
     margin-bottom: 1rem;
   }
 }
@@ -73,25 +72,6 @@
   }
   .triangle {
     height: 90%;
-    left: -9%;
-    padding-left: 0;
-    margin-left: 0;
-  }
-}
-
-@media (width <= 750px) {
-  .triangle {
-    left: -6%;
-  }
-}
-
-@media (560px <= width <= 700px) {
-  .value {
-    aspect-ratio: none;
-    margin-bottom: 1rem;
-    font-size: 3vw;
-  }
-  .triangle {
-    left: -2%;
+    width: auto;
   }
 }
