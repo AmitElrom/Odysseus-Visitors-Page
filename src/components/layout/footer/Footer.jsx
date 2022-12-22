@@ -6,7 +6,7 @@ import { IoLogoLinkedin } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <div className={classes.footer}>
+    <footer className={classes.footer}>
       <h2>
         <span>
           <a
@@ -22,7 +22,7 @@ const Footer = () => {
           </span>
         </span>
       </h2>
-    </div>
+    </footer>
   );
 };
 

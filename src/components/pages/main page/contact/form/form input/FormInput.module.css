@@ -24,6 +24,10 @@
   font-family: inherit;
 }
 
+.form-input textarea:focus {
+  outline: 2.5px solid var(--cream4);
+}
+
 .form-input .input,
 .form-input .input:-webkit-autofill,
 .form-input .input:-webkit-autofill:hover,

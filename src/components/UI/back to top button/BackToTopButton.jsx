@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { AiOutlineArrowUp } from "react-icons/ai";
+import { IoMdArrowRoundUp } from "react-icons/io";
 
 import classes from "./BackToTopButton.module.css";
 
@@ -23,7 +23,11 @@ const BackToTopButton = () => {
   return (
     <Fragment>
       {isBtnShown && (
-        <AiOutlineArrowUp className={classes.button} onClick={scrollToTop} />
+        <IoMdArrowRoundUp
+          size={25}
+          className={classes.button}
+          onClick={scrollToTop}
+        />
       )}
     </Fragment>
   );
