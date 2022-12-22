@@ -15,42 +15,6 @@
   font-size: 16px;
 }
 
-@media (width <= 1250px) {
-  .value {
-    aspect-ratio: 373/220;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (width <= 1000px) {
-  .value {
-    aspect-ratio: 340/220;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (width <= 900px) {
-  .value {
-    aspect-ratio: 300/220;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (width <= 860px) {
-  .value {
-    aspect-ratio: 3.5/1;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (560px <= width <= 700px) {
-  .value {
-    aspect-ratio: none;
-    margin-bottom: 1rem;
-    font-size: 3vw;
-  }
-}
-
 .data {
   shape-outside: url(../../../../../../assets/values\ and\ articles/values/value\ blue\ triangle.svg);
   shape-margin: 1rem;
@@ -79,4 +43,55 @@
   color: var(--white);
   font-weight: 500;
   font-size: 26px;
+}
+
+@media (width <= 1250px) {
+  .value {
+    aspect-ratio: 373/220;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width <= 1000px) {
+  .value {
+    aspect-ratio: 340/220;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width <= 900px) {
+  .value {
+    aspect-ratio: 300/220;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width <= 860px) {
+  .value {
+    aspect-ratio: 3.5/1;
+    margin-bottom: 1rem;
+  }
+  .triangle {
+    height: 90%;
+    left: -9%;
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+@media (width <= 750px) {
+  .triangle {
+    left: -6%;
+  }
+}
+
+@media (560px <= width <= 700px) {
+  .value {
+    aspect-ratio: none;
+    margin-bottom: 1rem;
+    font-size: 3vw;
+  }
+  .triangle {
+    left: -2%;
+  }
 }
