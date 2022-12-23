@@ -1,6 +1,21 @@
+.container {
+  position: relative;
+}
+
 .articles {
   margin: 0 auto;
   margin-top: var(--comp-margin-top);
   margin-bottom: var(--comp-margin-bottom);
   position: relative;
+  z-index: 1;
+}
+
+.tech-bg {
+  width: 100%;
+  background-color: var(--white);
+  position: absolute;
+  top: 0;
+  margin-top: calc(0rem - var(--comp-margin-top));
+  right: 0;
+  left: 0;
 }

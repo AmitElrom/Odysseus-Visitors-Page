@@ -30,12 +30,6 @@ code {
 
 @media (width <= 1150px) {
   .blocks {
-    width: 90%;
-  }
-}
-
-@media (width <= 1150px) {
-  .blocks {
     width: 95%;
   }
 }

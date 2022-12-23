@@ -1,23 +1,21 @@
+.container {
+  position: relative;
+  max-width: 100%;
+}
+
 .values {
   margin: 0 auto;
   margin-top: var(--comp-margin-top);
   margin-bottom: var(--comp-margin-bottom);
+  position: relative;
+  z-index: 1;
 }
 
-/* @media (1450px <= width < 1700px) and (800px <= height < 900px) {
-  .values {
-    margin-top: -10vh;
-  }
+.tech-bg {
+  width: 100%;
+  background-color: var(--white);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
-
-@media (1000px <= width < 1450px) and (700px <= height < 800px) {
-  .values {
-    margin-top: -10vh;
-  }
-}
-
-@media (800px <= width <= 1200px) {
-  .values {
-    width: calc(var(--width-blocks) + 10%);
-  }
-} */
