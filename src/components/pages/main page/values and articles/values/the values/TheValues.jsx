@@ -1,4 +1,5 @@
-import React from "react";
+import { useState } from "react";
+import axios from "axios";
 
 import Value from "../value/Value";
 
@@ -15,6 +16,7 @@ import { ReactComponent as LearningMobileIcon } from "../../../../../../assets/v
 import { ReactComponent as IntegrityMobileIcon } from "../../../../../../assets/values and articles/values/mobile/integrity_icon.svg";
 import { ReactComponent as CreativityMobileIcon } from "../../../../../../assets/values and articles/values/mobile/creativity_icon.svg";
 import { ReactComponent as TriumphMobileIcon } from "../../../../../../assets/values and articles/values/mobile/triumph_icon.svg";
+import { useEffect } from "react";
 
 const VALUES = [
   {
@@ -56,8 +58,29 @@ const VALUES = [
 ];
 
 const TheValues = () => {
-  const valuesList = VALUES.map((value) => {
-    return <Value key={value.title} {...value} />;
+  const [values, setValues] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_STRAPI_API_URL}/values`,
+        {
+          headers: {
+            Authorization: `bearer ${process.env.REACT_APP_STRAPI_API_TOKEN}`,
+          },
+        }
+      );
+      setValues(data?.data);
+      console.log(data.data);
+    })();
+  }, []);
+
+  // const valuesList = VALUES.map((value) => {
+  //   return <Value key={value.title} {...value} />;
+  // });
+
+  const valuesList = values.map((value) => {
+    return <Value key={value.id} {...value.attributes} />;
   });
 
   return <div className={classes.values}>{valuesList}</div>;

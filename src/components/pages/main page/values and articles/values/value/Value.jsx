@@ -1,11 +1,19 @@
-import { useState, useEffect, Fragment, useContext } from "react";
+import { useContext } from "react";
 import { screenSizeContext } from "../../../../../../store/screen-size-context";
 
 import ValueTitle from "../value title/ValueTitle";
 
 import classes from "./Value.module.css";
 
-const Value = ({ title, text1, text2, Icon, IconMobile }) => {
+const Value = ({
+  title,
+  text1,
+  text2,
+  Icon,
+  IconMobile,
+  paragraph,
+  paragraph2,
+}) => {
   const { isMobile } = useContext(screenSizeContext);
 
   return (
