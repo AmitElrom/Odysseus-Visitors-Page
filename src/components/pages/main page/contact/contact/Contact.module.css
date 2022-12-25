@@ -6,11 +6,8 @@
   background: url(../../../../../assets/contact/background.png);
   position: relative;
   margin: 0 auto;
-
-  /* Full height */
   height: 120vh;
   width: 100%;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -76,12 +73,6 @@
   }
 }
 
-/* @media (1000px <= width < 1300px) {
-  .contact .data {
-    top: 42vh;
-  }
-} */
-
 .contact-details-slash {
   margin: 0 1rem;
   font-size: 1.7rem;
@@ -105,4 +96,16 @@
 
 .contact-details-email {
   cursor: pointer;
+}
+
+.contact-details-phone {
+  all: unset;
+}
+
+.contact-details-phone a {
+  all: unset;
+}
+
+.contact-details-phone-mobile:hover {
+  text-decoration: underline;
 }

@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
   height: var(--footer-height);
+  background-color: var(--light-grey);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,6 +45,25 @@
 
 .developer-name:hover {
   background-size: 100% 3px;
+}
+
+.developer-name-mobile {
+  all: unset;
+  font-size: 4vw;
+  background-image: radial-gradient(
+    closest-side at 50% 50%,
+    #fffcd7 0%,
+    #fcf7ce 5%,
+    #eedc9e 36%,
+    #e5c97c 63%,
+    #dfbe67 85%,
+    #ddba60 100%
+  );
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transform-origin: center;
+  text-decoration: none;
 }
 
 .linkedin-icon {

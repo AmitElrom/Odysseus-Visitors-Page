@@ -4,11 +4,13 @@ import axios from "axios";
 export const strapiApiContext = createContext({
   values: [],
   articles: [],
+  aboutParagraphs: [],
 });
 
 const StrapiApiContextProvider = ({ children }) => {
   const [values, setValues] = useState([]);
   const [articles, setArticles] = useState([]);
+  const [aboutParagraphs, setAboutParagraphs] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -28,14 +30,24 @@ const StrapiApiContextProvider = ({ children }) => {
           },
         }
       );
+      const { data: dataAboutParagraphs } = await axios.get(
+        `${process.env.REACT_APP_STRAPI_API_URL}/about-paragraphs?populate=*`,
+        {
+          headers: {
+            Authorization: `bearer ${process.env.REACT_APP_STRAPI_API_TOKEN}`,
+          },
+        }
+      );
       setArticles(dataArticles?.data);
       setValues(dataValues?.data);
+      setAboutParagraphs(dataAboutParagraphs?.data);
     })();
   }, []);
 
   const contextValue = {
     values,
     articles,
+    aboutParagraphs,
   };
 
   return (

@@ -1,3 +1,7 @@
 .article {
   margin-top: calc(var(--nav-height) + 6vh);
 }
+
+.article .company {
+  text-align: left;
+}

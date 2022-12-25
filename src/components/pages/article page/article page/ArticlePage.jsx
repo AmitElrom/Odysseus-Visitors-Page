@@ -32,6 +32,7 @@ const ArticlePage = () => {
     <div className={classes.article}>
       <h1>{article.title}</h1>
       <Paragraphs paragraphs={article.paragraphs} />
+      <p className={classes.company}>קרן אודיסאוס – השקעה טכנולוגית</p>
     </div>
   );
 };
