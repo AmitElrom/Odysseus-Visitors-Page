@@ -5,15 +5,7 @@ import ValueTitle from "../value title/ValueTitle";
 
 import classes from "./Value.module.css";
 
-const Value = ({
-  title,
-  text1,
-  text2,
-  Icon,
-  IconMobile,
-  paragraph,
-  paragraph2,
-}) => {
+const Value = ({ value }) => {
   const { isMobile } = useContext(screenSizeContext);
 
   return (
@@ -24,18 +16,25 @@ const Value = ({
     >
       {isMobile ? (
         <div className={classes["triangle-mobile"]}>
-          <IconMobile />
-          <h3>{title}</h3>
+          <img
+            src={`${process.env.REACT_APP_STRAPI_API_UPLOAD_URL}${value?.attributes?.IconMobile?.data?.attributes?.url}`}
+            alt={value.attributes.IconMobile.data.attributes.hash}
+          />
+          <h3>{value?.attributes?.title}</h3>
         </div>
       ) : (
-        <Icon className={classes.triangle} />
+        <img
+          className={classes.triangle}
+          src={`${process.env.REACT_APP_STRAPI_API_UPLOAD_URL}${value?.attributes?.Icon?.data?.attributes?.url}`}
+          alt={value.attributes.Icon.data.attributes.hash}
+        />
       )}
 
       <div className={classes.data}>
-        {!isMobile && <ValueTitle title={title} />}
+        {!isMobile && <ValueTitle title={value?.attributes?.title} />}
         <div>
-          <p>{text1}</p>
-          <p>{text2}</p>
+          <p>{value.attributes.paragraph}</p>
+          {value.attributes.paragraph2 && <p>{value.attributes.paragraph2}</p>}
         </div>
       </div>
     </div>

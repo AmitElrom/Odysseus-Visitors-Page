@@ -7,7 +7,6 @@ const useClickOutside = (ref) => {
   useEffect(() => {
     const handler = (e) => {
       let element = e.path.find((item) => item.id === "toggle-btn");
-      console.log(element);
       if (!ref?.current.contains(e.target) && !element) {
         setIsMenuOpen(false);
       }

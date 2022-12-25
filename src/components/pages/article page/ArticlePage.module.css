@@ -1,4 +1,0 @@
-.article {
-  margin-top: calc(var(--nav-height) + 4vh);
-  height: calc(100vh - (var(--nav-height) + 6vh) - var(--footer-height));
-}

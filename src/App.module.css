@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   margin-top: var(--nav-height);
-  background-color: var(--light-grey);
 }
 
 .App-logo {
