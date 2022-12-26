@@ -8,8 +8,6 @@ import classes from "./About.module.css";
 const About = () => {
   const { aboutParagraphs } = useContext(strapiApiContext);
 
-  console.log("aboutParagraphs", aboutParagraphs);
-
   const aboutParagraphsList = aboutParagraphs?.map((par) => {
     return <p key={par.id}>{par?.attributes?.paragraph}</p>;
   });

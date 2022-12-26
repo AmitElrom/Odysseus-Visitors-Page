@@ -1,6 +1,8 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+
 import FormInput from "../form input/FormInput";
 
 import classes from "./ContactForm.module.css";
@@ -38,8 +40,45 @@ const ContactForm = () => {
       topic: Yup.string().required("שדה חובה"),
       email: Yup.string().email("כתובת מייל לא תקינה").required("שדה חובה"),
     }),
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      // Set the API endpoint and the access token
+      const endpoint = "https://graph.microsoft.com/v1.0/me/sendmail";
+      const access_token = "<your access token>";
+
+      // Set the headers for the request
+      const headers = {
+        Authorization: "Bearer " + access_token,
+        "Content-Type": "application/json",
+      };
+
+      // Set the request body
+      const data = {
+        message: {
+          subject: "Hello from React",
+          body: {
+            contentType: "Text",
+            content: "This is a test email from a React app.",
+          },
+          toRecipients: [
+            {
+              emailAddress: {
+                address: "test@outlook.com",
+              },
+            },
+          ],
+        },
+        saveToSentItems: "true",
+      };
+
+      // Make the API request
+      axios
+        .post(endpoint, data, { headers: headers })
+        .then((response) => {
+          console.log(response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   });
 
