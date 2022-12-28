@@ -1,0 +1,56 @@
+.article {
+  aspect-ratio: 397/223;
+  margin: 1rem;
+  text-align: right;
+  color: var(--blue);
+  background-color: transparent;
+}
+
+.article-mobile {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 3px 3px 3px #231f2033;
+  margin: 1rem;
+  color: var(--blue);
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.data {
+  padding: 0 1.2rem;
+}
+
+.data-mobile h3 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.data p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.img-div {
+  text-align: center;
+}
+
+.img {
+  width: 100%;
+}
+
+.span {
+  display: block;
+}
+
+.button-read-more-div {
+}
+
+.button-read-more-div button {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+}

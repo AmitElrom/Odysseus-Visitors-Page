@@ -1,0 +1,125 @@
+.main {
+  width: 100%;
+  background-color: var(--light-grey);
+}
+
+.main img {
+  width: 101%;
+}
+
+.main h1 {
+  text-align: right;
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  font-size: 5rem;
+}
+
+@media (1300px <= width <= 1600px) {
+  .main h1 {
+    top: 25%;
+  }
+}
+
+@media (1100px <= width < 1300px) {
+  .main h1 {
+    top: 15%;
+  }
+}
+
+@media (900px <= width < 1100px) {
+  .main h1 {
+    top: 15%;
+    font-size: 4rem;
+  }
+}
+
+@media (700px <= width < 900px) {
+  .main h1 {
+    top: 15%;
+    font-size: 3rem;
+  }
+}
+
+@media (600px <= width < 700px) {
+  .main h1 {
+    top: 15%;
+    font-size: 2.5rem;
+  }
+}
+
+@media (428px < width < 600px) {
+  .main h1 {
+    top: 12%;
+    font-size: 2rem;
+  }
+}
+
+@media (width <= 500px) {
+  .main h1 {
+    top: 12%;
+    left: 42%;
+    font-size: 2rem;
+  }
+}
+
+@media (width <= 440px) {
+  .main h1 {
+    top: 12%;
+    left: 40%;
+  }
+}
+
+@media (width <= 410px) {
+  .main h1 {
+    top: 12%;
+    left: 38%;
+  }
+}
+
+.main h1 .title1 {
+  font-weight: 900;
+  color: white;
+}
+
+.main h1 .title2 {
+  font-weight: 200;
+  background: radial-gradient(
+    var(--cream1),
+    var(--cream2),
+    var(--cream3),
+    var(--cream4),
+    var(--cream5),
+    var(--cream6)
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: none;
+}
+
+@media (390px < width < 600px) {
+  .main h1 .title1 {
+    font-size: 34px;
+  }
+  .main h1 .title2 {
+    font-size: 36px;
+  }
+}
+
+@media (300px < width < 350px) {
+  .main h1 .title1 {
+    font-size: 28px;
+  }
+  .main h1 .title2 {
+    font-size: 30px;
+  }
+}
+
+@media (width <= 320px) {
+  .main h1 .title1 {
+    font-size: 24px;
+  }
+  .main h1 .title2 {
+    font-size: 25px;
+  }
+}

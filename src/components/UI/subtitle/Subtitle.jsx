@@ -7,7 +7,7 @@ import classes from "./Subtitle.module.css";
 const Subtitle = ({ subtitle, className, id }) => {
   return (
     <Fragment>
-      <h2 id={id} className={`subtitle ${className}`}>
+      <h2 id={id} className={`${classes.subtitle} ${className}`}>
         {subtitle}
       </h2>
       <TitleDecoration className={classes.underline} />

@@ -1,0 +1,77 @@
+.value {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 3px 3px 3px #231f2033;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  color: var(--blue);
+  text-align: right;
+  aspect-ratio: 247/373;
+  position: relative;
+}
+
+.value-mobile {
+  text-align: center;
+  font-size: 16px;
+}
+
+.triangle {
+  width: 50%;
+  margin-right: 1rem;
+  float: left;
+  shape-outside: url("../../../../../../assets/values and articles/values/value\ blue\ triangle.svg");
+  shape-margin: 1.5rem;
+}
+
+.triangle-mobile {
+  position: relative;
+  text-align: center;
+}
+
+.triangle-mobile h3 {
+  position: absolute;
+  z-index: 1;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 26px;
+}
+
+@media (width <= 1250px) {
+  .value {
+    aspect-ratio: 373/220;
+    margin-bottom: 1rem;
+  }
+  .triangle {
+    float: left;
+    shape-outside: url("../../../../../../assets/values and articles/values/value\ blue\ triangle.svg");
+    shape-margin: 6rem;
+  }
+}
+
+@media (width <= 1000px) {
+  .value {
+    aspect-ratio: 340/220;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width <= 960px) {
+  .value {
+    aspect-ratio: 260/220;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width <= 860px) {
+  .value {
+    aspect-ratio: 3.5/1;
+    margin-bottom: 1rem;
+  }
+  .triangle {
+    height: 90%;
+    width: auto;
+  }
+}

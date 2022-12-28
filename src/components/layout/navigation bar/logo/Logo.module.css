@@ -1,9 +1,8 @@
 .logo {
-  position: static;
+  scale: 0.9;
+  display: flex;
 }
 
-@media (height <= 900px) {
-  .logo {
-    scale: 0.7;
-  }
+.logo img {
+  cursor: pointer;
 }

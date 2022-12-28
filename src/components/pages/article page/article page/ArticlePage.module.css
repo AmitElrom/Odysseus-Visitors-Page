@@ -1,0 +1,25 @@
+.article {
+  margin-top: var(--nav-height);
+  min-height: calc(100vh - var(--nav-height));
+  background-image: url("../../../../assets/values\ and\ articles/tech web.png");
+  background-color: var(--white);
+}
+
+.img-header {
+  width: 100%;
+}
+
+.data {
+  margin: 0 auto;
+  width: 80%;
+}
+
+@media (width >= 1700px) {
+  .data {
+    width: 65%;
+  }
+}
+
+.company {
+  text-align: left;
+}

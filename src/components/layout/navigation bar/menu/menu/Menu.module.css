@@ -4,3 +4,28 @@
   flex-direction: row;
   font-size: 19px;
 }
+
+@media (height >= 1700px) and (width >= 3000px) {
+  .menu {
+    font-size: 60px;
+  }
+}
+
+@media (width <= 615px) {
+  .menu {
+    font-size: 15px;
+  }
+}
+
+@media (width <= 500px) {
+  .menu {
+    font-size: 13px;
+  }
+}
+
+.menu-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 0;
+}

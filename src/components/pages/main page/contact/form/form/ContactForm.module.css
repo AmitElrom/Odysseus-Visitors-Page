@@ -1,0 +1,60 @@
+.div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (width <= 1250px) {
+  .div {
+    transform: scale(0.7);
+    margin-top: -5vh;
+    margin-bottom: -5vh;
+  }
+  .form {
+    width: 80%;
+  }
+}
+
+@media (width <= 550px) {
+  .form {
+    width: 90%;
+  }
+}
+
+@media (width <= 550px) {
+  .form {
+    width: 100%;
+  }
+}
+
+.button-div {
+  width: 100%;
+}
+
+.button-div button {
+  width: 100%;
+  font-family: inherit;
+  background: transparent
+    radial-gradient(
+      closest-side at 50% 50%,
+      #fffcd7 0%,
+      #fcf7ce 5%,
+      #eedc9e 36%,
+      #e5c97c 63%,
+      #dfbe67 85%,
+      #ddba60 100%
+    )
+    0% 0% no-repeat padding-box;
+  border: none;
+  aspect-ratio: 868/51;
+  color: var(--blue);
+  font-weight: 900;
+  font-size: 1.6rem;
+  cursor: pointer;
+}

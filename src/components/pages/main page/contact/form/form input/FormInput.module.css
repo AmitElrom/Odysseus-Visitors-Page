@@ -1,0 +1,70 @@
+.form-input {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.form-input .input {
+  font-size: 1.2rem;
+  border: none;
+  width: 100%;
+  font-family: inherit;
+  aspect-ratio: 217/11;
+}
+
+.form-input .input:focus {
+  outline: 2.5px solid var(--cream4);
+}
+
+.form-input textarea {
+  resize: none;
+  aspect-ratio: 217/25;
+  font-size: 1.2rem;
+  border: none;
+  width: 100%;
+  font-family: inherit;
+}
+
+.form-input textarea:focus {
+  outline: 2.5px solid var(--cream4);
+}
+
+.form-input .input,
+.form-input .input:-webkit-autofill,
+.form-input .input:-webkit-autofill:hover,
+.form-input .input:-webkit-autofill:focus,
+.form-input .input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px var(--light-grey) inset !important;
+}
+
+.form-input textarea,
+.form-input textarea:-webkit-autofill,
+.form-input textarea:-webkit-autofill:hover,
+.form-input textarea:-webkit-autofill:focus,
+.form-input textarea:-webkit-autofill:active {
+  background-color: var(--light-grey);
+}
+
+.form-input p {
+  margin: 1px inherit;
+  padding: 1px inherit;
+  color: red;
+  font-size: 18px;
+}
+
+.input-field-error {
+  background-color: salmon;
+  outline: 2px solid red;
+}
+.input-field-error:focus {
+  outline: none !important;
+  border: 2px solid red;
+  background-color: salmon;
+}
+
+.form-input .input-field-error,
+.form-input .input-field-error:-webkit-autofill,
+.form-input .input-field-error:-webkit-autofill:hover,
+.form-input .input-field-error:-webkit-autofill:focus,
+.form-input .input-field-error:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px salmon inset !important;
+}

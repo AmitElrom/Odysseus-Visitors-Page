@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
+import useClickOutside from "../../../../../hooks/use-click-outside";
+import { menuContext } from "../../../../../store/menu-context";
 import MenuItem from "../menu item/MenuItem";
 
 import classes from "./Menu.module.css";
@@ -15,12 +17,23 @@ const TITLES = [
   "יצירת קשר",
 ];
 
-const Menu = () => {
-  const titlesList = TITLES.map((title) => {
-    return <MenuItem key={title} title={title} />;
-  });
+const Menu = ({ isMobile }) => {
 
-  return <ul className={classes.menu}>{titlesList}</ul>;
+  const menuRef = useRef();
+
+  useClickOutside(menuRef);
+
+  const titlesList = !isMobile
+    ? TITLES.map((title) => {
+      return <MenuItem key={title} title={title} />;
+    })
+    : TITLES.filter((title) => title !== "/").map((title) => {
+      return <MenuItem isMobile={isMobile} key={title} title={title} />;
+    });
+
+  const menuClasses = !isMobile ? classes.menu : classes["menu-mobile"];
+
+  return <ul className={menuClasses} ref={menuRef} >{titlesList}</ul>;
 };
 
 export default Menu;

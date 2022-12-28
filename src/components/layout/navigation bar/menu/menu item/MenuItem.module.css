@@ -1,7 +1,25 @@
 .menu-item {
   margin-left: 1rem;
+  height: max-content;
+  position: relative;
+  top: 65%;
 }
 
 .menu-item-title {
   cursor: pointer;
+}
+
+.menu-item-mobile {
+  color: var(--cream6);
+  width: 90%;
+  text-align: center;
+  padding: 0.2rem;
+  transition: background 400ms;
+  border-bottom: 2px solid var(--blue);
+}
+
+.menu-item-mobile:hover {
+  color: var(--white);
+  border-bottom: none;
+  background-color: var(--blue);
 }
