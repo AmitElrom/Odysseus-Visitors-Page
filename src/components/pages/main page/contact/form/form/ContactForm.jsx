@@ -41,44 +41,20 @@ const ContactForm = () => {
       email: Yup.string().email("כתובת מייל לא תקינה").required("שדה חובה"),
     }),
     onSubmit: async (values) => {
-      // Set the API endpoint and the access token
-      const endpoint = "https://graph.microsoft.com/v1.0/me/sendmail";
-      const access_token = "<your access token>";
-
-      // Set the headers for the request
-      const headers = {
-        Authorization: "Bearer " + access_token,
-        "Content-Type": "application/json",
-      };
-
-      // Set the request body
-      const data = {
-        message: {
-          subject: "Hello from React",
-          body: {
-            contentType: "Text",
-            content: "This is a test email from a React app.",
-          },
-          toRecipients: [
-            {
-              emailAddress: {
-                address: "test@outlook.com",
-              },
-            },
-          ],
-        },
-        saveToSentItems: "true",
-      };
-
-      // Make the API request
-      axios
-        .post(endpoint, data, { headers: headers })
-        .then((response) => {
-          console.log(response.status);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      try {
+        const { data } = await axios.post(
+          "https://formsubmit.co/ajax/474feefff46a09c80d6c8f99e2707d75",
+          {
+            name: values.name,
+            email: values.email,
+            topic: values.topic,
+            message: values.message || `${values.name} לא צירף הודעה`,
+          }
+        );
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
     },
   });
 
