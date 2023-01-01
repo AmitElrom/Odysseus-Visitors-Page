@@ -1,11 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { ClipLoader } from "react-spinners";
 
 import FormInput from "../form input/FormInput";
+import Success from "../../../../../UI/message/Message";
 
 import classes from "./ContactForm.module.css";
+
+import { client } from "../../../../../../client";
 
 const FORM_INPUTS = [
   {
@@ -28,6 +32,10 @@ const FORM_INPUTS = [
 ];
 
 const ContactForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -40,9 +48,10 @@ const ContactForm = () => {
       topic: Yup.string().required("שדה חובה"),
       email: Yup.string().email("כתובת מייל לא תקינה").required("שדה חובה"),
     }),
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
       try {
-        const { data } = await axios.post(
+        setIsLoading(true);
+        await axios.post(
           "https://formsubmit.co/ajax/474feefff46a09c80d6c8f99e2707d75",
           {
             name: values.name,
@@ -51,9 +60,24 @@ const ContactForm = () => {
             message: values.message || `${values.name} לא צירף הודעה`,
           }
         );
-        console.log(data);
+
+        const form = {
+          _type: "contact",
+          ...values,
+        };
+
+        await client.create(form);
+        setIsLoading(false);
+        setIsFormSubmitted(true);
+        resetForm();
+
+        setTimeout(() => {
+          if (!isFormSubmitted) {
+            setIsFormSubmitted(false);
+          }
+        }, 3500);
       } catch (error) {
-        console.log(error);
+        setIsError(true);
       }
     },
   });
@@ -63,6 +87,7 @@ const ContactForm = () => {
       <FormInput
         key={input.name}
         {...input}
+        value={formik.values[input.name]}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         error={
@@ -76,8 +101,10 @@ const ContactForm = () => {
 
   return (
     <div className={classes.div}>
+      {isFormSubmitted && <Success isError={isError} />}
       <form className={classes.form} onSubmit={formik.handleSubmit}>
         <div className={classes.inputs}>{formInputsList}</div>
+        {isLoading && <ClipLoader color="var(--cream6)" />}
         <div className={classes["button-div"]}>
           <button type="submit">שלח</button>
         </div>

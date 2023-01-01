@@ -6,6 +6,22 @@
   justify-content: center;
 }
 
+@media (width >= 1600px) {
+  .values {
+    margin: 0 auto;
+    margin-top: 2%;
+    width: 80%;
+  }
+}
+
+@media (1000px <= width < 1600px) {
+  .values {
+    margin: 0 auto;
+    margin-top: 2%;
+    width: 90%;
+  }
+}
+
 @media (width <= 1250px) {
   .values {
     grid-template-columns: 1fr 1fr;

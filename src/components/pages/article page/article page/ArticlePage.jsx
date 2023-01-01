@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router";
-
-import { strapiApiContext } from "../../../../store/strapi-api-context";
+import { useLocation } from "react-router-dom";
 
 import Contact from "../../main page/contact/contact/Contact";
 import Paragraphs from "../paragraphs/paragraphs/Paragraphs";
@@ -11,7 +10,15 @@ import classes from "./ArticlePage.module.css";
 import headerImg from "../../../../assets/article page/article_header.png";
 import Subtitle from "../../../UI/subtitle/Subtitle";
 
+import { sanityApiContext } from "../../../../store/sanity-api-context";
+
 const ArticlePage = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const [article, setArticle] = useState({
     title: "",
     paragraphs: [],
@@ -19,7 +26,7 @@ const ArticlePage = () => {
 
   const { articleId } = useParams();
 
-  const { articles } = useContext(strapiApiContext);
+  const { articles } = useContext(sanityApiContext);
 
   useEffect(() => {
     const articleData = articles.find(
@@ -28,8 +35,8 @@ const ArticlePage = () => {
     setArticle((prevArticles) => {
       return {
         ...prevArticles,
-        title: articleData?.attributes?.mainTitle,
-        paragraphs: articleData?.attributes?.paragraphs?.data,
+        title: articleData?.mainTitle,
+        paragraphs: articleData?.paragraphs,
       };
     });
   }, [articleId, articles]);

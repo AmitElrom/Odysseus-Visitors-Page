@@ -8,6 +8,7 @@ const FormInput = ({
   error,
   name,
   type,
+  value,
   onChange,
   onBlur,
 }) => {
@@ -17,6 +18,7 @@ const FormInput = ({
         <textarea
           placeholder={placeholder}
           name={name}
+          value={value}
           onChange={onChange}
           onBlur={onBlur}
         ></textarea>
@@ -28,6 +30,7 @@ const FormInput = ({
           type={type && type}
           placeholder={placeholder}
           name={name}
+          value={value}
           onChange={onChange}
           onBlur={onBlur}
         />

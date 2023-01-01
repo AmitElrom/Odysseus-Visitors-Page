@@ -1,20 +1,19 @@
-import React from "react";
 import { useContext } from "react";
-import { strapiApiContext } from "../../../../store/strapi-api-context";
+import { sanityApiContext } from "../../../../store/sanity-api-context";
 import Subtitle from "../../../UI/subtitle/Subtitle";
 
 import classes from "./About.module.css";
 
 const About = () => {
-  const { aboutParagraphs } = useContext(strapiApiContext);
+  const { about } = useContext(sanityApiContext);
 
-  const aboutParagraphsList = aboutParagraphs?.map((par) => {
-    return <p key={par.id}>{par?.attributes?.paragraph}</p>;
+  const aboutParagraphsList = about?.paragraphs?.map((par) => {
+    return <p key={par._key}>{par?.paragraph}</p>;
   });
 
   return (
     <div className={classes.about}>
-      <Subtitle subtitle="אודותינו" id="אודות" />
+      <Subtitle subtitle={about?.title} id="אודות" />
       <div className={classes.text}>{aboutParagraphsList}</div>
     </div>
   );
