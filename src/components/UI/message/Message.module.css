@@ -1,0 +1,25 @@
+.modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 7px;
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 3rem;
+  text-align: center;
+  background-color: white;
+  z-index: 1;
+}
+
+.success {
+  border-color: var(--cream6);
+  color: var(--cream6);
+}
+
+.error {
+  border-color: red;
+  color: red;
+}

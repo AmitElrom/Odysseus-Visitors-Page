@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { menuContext } from "../../../../store/menu-context";
 import { screenSizeContext } from "../../../../store/screen-size-context";
 

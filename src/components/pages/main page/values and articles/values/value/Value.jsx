@@ -3,6 +3,8 @@ import { screenSizeContext } from "../../../../../../store/screen-size-context";
 
 import ValueTitle from "../value title/ValueTitle";
 
+import { urlFor } from "../../../../../../client";
+
 import classes from "./Value.module.css";
 
 const Value = ({ value }) => {
@@ -16,25 +18,22 @@ const Value = ({ value }) => {
     >
       {isMobile ? (
         <div className={classes["triangle-mobile"]}>
-          <img
-            src={`${process.env.REACT_APP_STRAPI_API_UPLOAD_URL}${value?.attributes?.IconMobile?.data?.attributes?.url}`}
-            alt={value.attributes.IconMobile.data.attributes.hash}
-          />
-          <h3>{value?.attributes?.title}</h3>
+          <img src={urlFor(value?.iconMobile)} alt={value?.title} />
+          <h3>{value?.title}</h3>
         </div>
       ) : (
         <img
           className={classes.triangle}
-          src={`${process.env.REACT_APP_STRAPI_API_UPLOAD_URL}${value?.attributes?.Icon?.data?.attributes?.url}`}
-          alt={value.attributes.Icon.data.attributes.hash}
+          src={urlFor(value?.icon)}
+          alt={value?.title}
         />
       )}
 
       <div className={classes.data}>
-        {!isMobile && <ValueTitle title={value?.attributes?.title} />}
+        {!isMobile && <ValueTitle title={value?.title} />}
         <div>
-          <p>{value.attributes.paragraph}</p>
-          {value.attributes.paragraph2 && <p>{value.attributes.paragraph2}</p>}
+          <p>{value?.paragraph}</p>
+          {value?.paragraph2 && <p>{value?.paragraph2}</p>}
         </div>
       </div>
     </div>

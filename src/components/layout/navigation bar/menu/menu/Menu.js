@@ -1,6 +1,5 @@
-import React, { useContext, useRef } from "react";
+import React, { useRef } from "react";
 import useClickOutside from "../../../../../hooks/use-click-outside";
-import { menuContext } from "../../../../../store/menu-context";
 import MenuItem from "../menu item/MenuItem";
 
 import classes from "./Menu.module.css";

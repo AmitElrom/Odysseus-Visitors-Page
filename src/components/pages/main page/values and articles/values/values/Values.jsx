@@ -13,7 +13,7 @@ const Values = () => {
 
   return (
     <div className={classes.container}>
-      <div className={`blocks ${classes.values}`}>
+      <div className={`${classes.values}`}>
         <Subtitle subtitle="ערכי הקרן" id="ערכי הקרן" />
         <TheValues />
       </div>
