@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router";
-import { scroller } from "react-scroll";
 
 import logoIcon from "../../../../assets/navigation bar/logoIcon.png";
 
@@ -14,12 +13,7 @@ const Logo = () => {
     if (pathname !== "/") {
       navigate("/");
     } else {
-      scroller.scrollTo("ראשי", {
-        spy: true,
-        smooth: true,
-        offset: -100,
-        duration: 500,
-      });
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
   };
 

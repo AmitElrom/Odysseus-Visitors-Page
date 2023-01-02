@@ -8,10 +8,10 @@ const Paragraph = ({ title, text }) => {
       {title ? (
         <div className={classes.paragraph}>
           <h2>{title}</h2>
-          <p>{text}</p>
+          <p className={classes.p}>{text}</p>
         </div>
       ) : (
-        <p className={classes.paragraph}>{text}</p>
+        <p className={`${classes.paragraph} ${classes.p}`}>{text}</p>
       )}
     </Fragment>
   );

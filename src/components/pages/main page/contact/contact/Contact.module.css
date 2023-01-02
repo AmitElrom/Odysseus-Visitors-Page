@@ -59,6 +59,7 @@
 
 .contact-details {
   color: var(--white);
+  margin-top: 1rem;
 }
 
 @media (width <= 420px) {
@@ -108,4 +109,18 @@
 
 .contact-details-phone-mobile:hover {
   text-decoration: underline;
+}
+
+.linkedin-icon-parent {
+  position: relative;
+}
+
+.linkedin-icon {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+}
+
+.linkedin-icon-mobile {
+  cursor: pointer;
 }

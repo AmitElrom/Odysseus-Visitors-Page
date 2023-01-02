@@ -5,7 +5,7 @@ import axios from "axios";
 import { ClipLoader } from "react-spinners";
 
 import FormInput from "../form input/FormInput";
-import Success from "../../../../../UI/message/Message";
+import Message from "../../../../../UI/message/Message";
 
 import classes from "./ContactForm.module.css";
 
@@ -101,7 +101,7 @@ const ContactForm = () => {
 
   return (
     <div className={classes.div}>
-      {isFormSubmitted && <Success isError={isError} />}
+      {isFormSubmitted && <Message isError={isError} />}
       <form className={classes.form} onSubmit={formik.handleSubmit}>
         <div className={classes.inputs}>{formInputsList}</div>
         {isLoading && <ClipLoader color="var(--cream6)" />}

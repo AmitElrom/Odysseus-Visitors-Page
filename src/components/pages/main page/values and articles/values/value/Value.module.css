@@ -10,6 +10,24 @@
   position: relative;
 }
 
+@media (width >= 1650px) {
+  .paragraphs {
+    font-size: 1.1em;
+  }
+}
+
+@media (width >= 1750px) {
+  .paragraphs {
+    font-size: 1.2em;
+  }
+}
+
+@media (width >= 1850px) {
+  .paragraphs {
+    font-size: 1.3em;
+  }
+}
+
 .value-mobile {
   text-align: center;
   font-size: 16px;

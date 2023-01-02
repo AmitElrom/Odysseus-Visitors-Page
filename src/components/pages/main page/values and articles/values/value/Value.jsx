@@ -28,10 +28,9 @@ const Value = ({ value }) => {
           alt={value?.title}
         />
       )}
-
-      <div className={classes.data}>
+      <div>
         {!isMobile && <ValueTitle title={value?.title} />}
-        <div>
+        <div className={classes.paragraphs}>
           <p>{value?.paragraph}</p>
           {value?.paragraph2 && <p>{value?.paragraph2}</p>}
         </div>

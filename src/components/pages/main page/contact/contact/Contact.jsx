@@ -1,15 +1,24 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { IoLogoLinkedin } from "react-icons/io";
+
+import { screenSizeContext } from "../../../../../store/screen-size-context";
+
+import ContactForm from "../form/form/ContactForm";
 import Subtitle from "../../../../UI/subtitle/Subtitle";
+import ButtonMailto from "./button mail to/ButtonMailTo";
 
 import classes from "./Contact.module.css";
 
-import ContactForm from "../form/form/ContactForm";
-import ButtonMailto from "./button mail to/ButtonMailTo";
 import { useContext } from "react";
-import { screenSizeContext } from "../../../../../store/screen-size-context";
 
 const Contact = () => {
-  const { isMobile } = useContext(screenSizeContext);
+  const { isMobile, width } = useContext(screenSizeContext);
+  console.log(width);
+
+  const toLinkedinProfile = () => {
+    window.location.href =
+      "https://www.linkedin.com/company/odysseus-hedge-fund/";
+  };
 
   return (
     <div className={`${classes.contact}`}>
@@ -39,6 +48,27 @@ const Contact = () => {
               052-2803699
             </a>
           </span>
+          {width > 500 ? (
+            <Fragment>
+              <span className={classes["contact-details-slash"]}>/</span>
+              <span className={classes["linkedin-icon-parent"]}>
+                <IoLogoLinkedin
+                  size={30}
+                  onClick={toLinkedinProfile}
+                  className={classes["linkedin-icon"]}
+                />
+              </span>
+            </Fragment>
+          ) : (
+            <div>
+              <IoLogoLinkedin
+                color="white"
+                size={30}
+                onClick={toLinkedinProfile}
+                className={classes["linkedin-icon-mobile"]}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
