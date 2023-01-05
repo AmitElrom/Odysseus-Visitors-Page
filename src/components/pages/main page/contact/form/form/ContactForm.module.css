@@ -35,6 +35,8 @@
 
 .button-div {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .button-div button {

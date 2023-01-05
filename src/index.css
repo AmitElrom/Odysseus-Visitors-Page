@@ -37,6 +37,7 @@ code {
 
 :root {
   --nav-height: 10vh;
+  --nav-height-mobile: 7vh;
   --footer-height: 15vh;
   --blue: #00497b;
   --white: #ffffff;

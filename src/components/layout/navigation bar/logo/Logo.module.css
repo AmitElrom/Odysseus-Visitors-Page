@@ -6,3 +6,8 @@
 .logo img {
   cursor: pointer;
 }
+
+.the-logo {
+  cursor: pointer;
+  max-height: 100%;
+}

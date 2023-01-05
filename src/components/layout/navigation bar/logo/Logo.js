@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router";
 
-import logoIcon from "../../../../assets/navigation bar/logoIcon.png";
+import { ReactComponent as LogoIcon } from '../../../../assets/navigation bar/logo.svg';
 
 import classes from "./Logo.module.css";
 
@@ -19,7 +19,7 @@ const Logo = () => {
 
   return (
     <div onClick={navigateToMain} className={classes.logo}>
-      <img src={logoIcon} alt="logo" />
+      <LogoIcon className={classes["the-logo"]} />
     </div>
   );
 };
