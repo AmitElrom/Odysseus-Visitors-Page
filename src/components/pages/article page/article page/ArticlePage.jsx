@@ -34,7 +34,6 @@ const ArticlePage = () => {
     const articleData = articles.find(
       (article) => article.id.toString() === articleId
     );
-    console.log(articleData);
     setArticle((prevArticles) => {
       return {
         ...prevArticles,
