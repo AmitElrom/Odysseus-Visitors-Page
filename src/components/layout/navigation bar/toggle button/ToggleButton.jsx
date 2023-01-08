@@ -4,11 +4,11 @@ import { Spin as Hamburger } from "hamburger-react";
 import classes from "./ToggleButton.module.css";
 import { menuContext } from "../../../../store/menu-context";
 
-const ToggleButton = ({ onClick }) => {
+const ToggleButton = ({ onClick, className }) => {
   const { isMenuOpen } = useContext(menuContext);
 
   return (
-    <div id="toggle-btn" className={classes["toggle-btn"]}>
+    <div id="toggle-btn" className={`${className} ${classes["toggle-btn"]}`}>
       <Hamburger
         onToggle={onClick}
         toggled={isMenuOpen}

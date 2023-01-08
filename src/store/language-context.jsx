@@ -1,32 +1,19 @@
 import { createContext, useState } from "react";
 
 export const languageContext = createContext({
-  lng: "",
-  lngCode: "",
-  rtl: true,
+  isHebrew: true,
   changeLanguageHandler: () => {},
 });
 
 const LanguageContextProvider = ({ children }) => {
-  const [language, setLanguage] = useState({
-    lng: "",
-    lngCode: "",
-    rtl: true,
-  });
+  const [isHebrew, setIsHebrew] = useState(true);
 
-  const changeLanguageHandler = ({ lng, lngCode, rtl }) => {
-    setLanguage((prevLng) => {
-      return {
-        ...prevLng,
-        lng,
-        lngCode,
-        rtl,
-      };
-    });
+  const changeLanguageHandler = () => {
+    setIsHebrew((prev) => !prev);
   };
 
   const contextValues = {
-    ...language,
+    isHebrew,
     changeLanguageHandler,
   };
 

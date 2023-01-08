@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
+import { useContext } from "react";
 import useClickOutside from "../../../../../hooks/use-click-outside";
+import { languageContext } from "../../../../../store/language-context";
 import MenuItem from "../menu item/MenuItem";
 
 import classes from "./Menu.module.css";
@@ -16,7 +18,8 @@ const TITLES = [
   { id: "t9", title: "יצירת קשר" },
 ];
 
-const Menu = ({ isMobile }) => {
+const Menu = ({ isMobile, className }) => {
+  const { isHebrew } = useContext(languageContext);
 
   const menuRef = useRef();
 
@@ -24,15 +27,21 @@ const Menu = ({ isMobile }) => {
 
   const titlesList = !isMobile
     ? TITLES.map((title) => {
-      return <MenuItem key={title.id} title={title.title} />;
-    })
+        return <MenuItem key={title.id} title={title.title} />;
+      })
     : TITLES.filter((title) => title !== "/").map((title) => {
-      return <MenuItem isMobile={isMobile} key={title.id} title={title.title} />;
-    });
+        return (
+          <MenuItem isMobile={isMobile} key={title.id} title={title.title} />
+        );
+      });
 
   const menuClasses = !isMobile ? classes.menu : classes["menu-mobile"];
 
-  return <ul className={menuClasses} ref={menuRef} >{titlesList}</ul>;
+  return (
+    <ul className={`${className} ${menuClasses}`} ref={menuRef}>
+      {titlesList}
+    </ul>
+  );
 };
 
 export default Menu;
