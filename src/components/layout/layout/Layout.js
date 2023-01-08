@@ -36,7 +36,7 @@ const Layout = ({ children, dir, className }) => {
         <NavigationBar />
       </MenuContextProvider>
       <SanityApiContextProvider>
-        <main className={className} >{children}</main>
+        <main className={className} dir={isHebrew ? "rtl" : "ltr"} >{children}</main>
       </SanityApiContextProvider>
       <Footer />
       <BackToTopButton />
