@@ -57,7 +57,7 @@
   font-size: 26px;
 }
 
-@media (width <= 1250px) {
+@media (width <= 1240px) {
   .value {
     aspect-ratio: 373/220;
     margin-bottom: 1rem;
