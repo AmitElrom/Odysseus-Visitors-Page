@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { IoLogoLinkedin } from "react-icons/io";
+import NewTabLink from "../../../../UI/new tab link/NewTabLink";
 
 import { screenSizeContext } from "../../../../../store/screen-size-context";
 
@@ -8,8 +9,6 @@ import Subtitle from "../../../../UI/subtitle/Subtitle";
 import ButtonMailto from "./button mail to/ButtonMailTo";
 
 import classes from "./Contact.module.css";
-
-import { useContext } from "react";
 
 const Contact = () => {
   const { isMobile, width } = useContext(screenSizeContext);
@@ -50,22 +49,21 @@ const Contact = () => {
           {width > 500 ? (
             <Fragment>
               <span className={classes["contact-details-slash"]}>/</span>
-              <span className={classes["linkedin-icon-parent"]}>
+              <NewTabLink href="https://www.linkedin.com/company/odysseus-hedge-fund/">
                 <IoLogoLinkedin
                   size={30}
-                  onClick={toLinkedinProfile}
                   className={classes["linkedin-icon"]}
                 />
-              </span>
+              </NewTabLink>
             </Fragment>
           ) : (
             <div>
-              <IoLogoLinkedin
-                color="white"
-                size={30}
-                onClick={toLinkedinProfile}
-                className={classes["linkedin-icon-mobile"]}
-              />
+              <NewTabLink href="https://www.linkedin.com/company/odysseus-hedge-fund/">
+                <IoLogoLinkedin
+                  size={30}
+                  className={classes["linkedin-icon-mobile"]}
+                />
+              </NewTabLink>
             </div>
           )}
         </div>

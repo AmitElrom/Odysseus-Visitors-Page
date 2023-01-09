@@ -43,9 +43,6 @@
   display: block;
 }
 
-.button-read-more-div {
-}
-
 .button-read-more-div button {
   background-color: var(--blue);
   border-color: var(--blue);

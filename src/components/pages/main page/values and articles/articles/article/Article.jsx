@@ -32,12 +32,11 @@ const Article = ({ article }) => {
             <span className={classes.span}>{article.title2InArticles}</span>
           )}
         </h3>
-
         <p
           style={
             article?.title2InArticles
-              ? { WebkitLineClamp: 4 }
-              : { WebkitLineClamp: 5 }
+              ? { WebkitLineClamp: 4, padding: isMobile ? "0 1rem" : undefined }
+              : { WebkitLineClamp: 5, padding: isMobile ? "0 1rem" : undefined }
           }
         >
           {article?.textInArticles}

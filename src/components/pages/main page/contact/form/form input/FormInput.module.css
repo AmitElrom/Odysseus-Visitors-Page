@@ -9,6 +9,7 @@
   width: 100%;
   font-family: inherit;
   aspect-ratio: 217/11;
+  box-sizing: border-box;
 }
 
 .form-input .input:focus {
@@ -22,6 +23,7 @@
   border: none;
   width: 100%;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 .form-input textarea:focus {

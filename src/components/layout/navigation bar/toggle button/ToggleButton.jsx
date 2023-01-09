@@ -12,7 +12,7 @@ const ToggleButton = ({ onClick, className }) => {
       <Hamburger
         onToggle={onClick}
         toggled={isMenuOpen}
-        size={50}
+        size={30}
         color="var(--blue)"
         distance="sm"
       />
