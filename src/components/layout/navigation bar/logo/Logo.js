@@ -5,7 +5,7 @@ import { ReactComponent as LogoIcon } from '../../../../assets/navigation bar/lo
 
 import classes from "./Logo.module.css";
 
-const Logo = () => {
+const Logo = ({ className }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -18,7 +18,7 @@ const Logo = () => {
   };
 
   return (
-    <div onClick={navigateToMain} className={classes.logo}>
+    <div onClick={navigateToMain} className={`${className} ${classes.logo}`}>
       <LogoIcon className={classes["the-logo"]} />
     </div>
   );

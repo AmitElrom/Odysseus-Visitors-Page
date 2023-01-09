@@ -1,12 +1,20 @@
 .data {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 60%;
+  width: 85%;
   height: var(--nav-height);
   margin: 0 auto;
   color: var(--blue);
   padding: 1% 0;
+}
+
+.data-mobile {
+  justify-content: space-between;
+  width: 95%;
+}
+
+.item-left {
+  margin-right: auto;
 }
 
 @media (width <= 1150px) {
@@ -31,4 +39,8 @@
   .data {
     width: 95%;
   }
+}
+
+.flag {
+  cursor: pointer;
 }

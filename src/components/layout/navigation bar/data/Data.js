@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import { menuContext } from "../../../../store/menu-context";
 import { screenSizeContext } from "../../../../store/screen-size-context";
 
@@ -8,15 +8,49 @@ import ToggleButton from "../toggle button/ToggleButton";
 
 import classes from "./Data.module.css";
 
-const Data = () => {
+import { ReactComponent as IsraelFlagIcon } from "../../../../assets/navigation bar/flags/israel_flag.svg";
+import { ReactComponent as UkFlagIcon } from "../../../../assets/navigation bar/flags/great_britain_flag.svg";
+import { languageContext } from "../../../../store/language-context";
 
+const Data = () => {
   const { toggleMenu } = useContext(menuContext);
   const { isMobile } = useContext(screenSizeContext);
+  const { isHebrew, changeLanguageHandler } = useContext(languageContext);
 
   return (
-    <div className={classes.data}>
-      {!isMobile ? <Menu /> : <ToggleButton onClick={toggleMenu} />}
-      <Logo />
+    <div
+      className={`${classes.data} ${isMobile ? classes["data-mobile"] : undefined
+        }`}
+    >
+      {!isMobile ? (
+        <Fragment>
+          <Logo />
+          {!isMobile ? <Menu /> : <ToggleButton onClick={toggleMenu} />}
+          {isHebrew ? <IsraelFlagIcon
+            onClick={changeLanguageHandler}
+            className={`${classes["item-left"]} ${classes.flag}`}
+            width={30}
+          /> : <UkFlagIcon
+            onClick={changeLanguageHandler}
+            className={`${classes["item-left"]} ${classes.flag}`}
+            width={30}
+          />}
+        </Fragment>
+      ) : (
+        <Fragment>
+          <ToggleButton onClick={toggleMenu} />
+          <Logo className={classes.flag} />
+          {isHebrew ? <IsraelFlagIcon
+            onClick={changeLanguageHandler}
+            className={classes.flag}
+            width={30}
+          /> : <UkFlagIcon
+            onClick={changeLanguageHandler}
+            className={classes.flag}
+            width={30}
+          />}
+        </Fragment>
+      )}
     </div>
   );
 };

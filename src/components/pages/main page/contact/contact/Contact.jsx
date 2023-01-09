@@ -13,7 +13,6 @@ import { useContext } from "react";
 
 const Contact = () => {
   const { isMobile, width } = useContext(screenSizeContext);
-  console.log(width);
 
   const toLinkedinProfile = () => {
     window.location.href =
