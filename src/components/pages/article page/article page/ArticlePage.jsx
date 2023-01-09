@@ -31,26 +31,28 @@ const ArticlePage = () => {
   const { articles } = useContext(sanityApiContext);
 
   useEffect(() => {
-    const articleData = articles.find(
+    const articleData = articles?.find(
       (article) => article.id.toString() === articleId
     );
+
     setArticle((prevArticles) => {
       return {
         ...prevArticles,
         title: articleData?.mainTitle,
         paragraphs: articleData?.paragraphs,
-        image: urlFor(articleData?.internalImage),
+        image: articleData?.internalImage,
       };
     });
   }, [articleId, articles]);
 
+  // console.log(article.image.asset._ref);
+
   return (
     <div className={classes.article}>
-      <img
+      {/* <img
         className={classes["img-header"]}
-        src={article?.image}
         alt={`${article?.title} רקע תמונה`}
-      />
+      /> */}
       <div className={classes.data}>
         <Subtitle subtitle={article?.title} />
         <Paragraphs paragraphs={article?.paragraphs} />

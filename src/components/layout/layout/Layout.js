@@ -8,11 +8,8 @@ import SanityApiContextProvider from "../../../store/sanity-api-context";
 import NavigationBar from "../navigation bar/navigation bar/NavigationBar";
 import Footer from "../footer/Footer";
 import BackToTopButton from "../../UI/back to top button/BackToTopButton";
-import { languageContext } from "../../../store/language-context";
 
 const Layout = ({ children, dir, className }) => {
-
-  const { isHebrew } = useContext(languageContext);
 
   const { pathname } = useLocation();
 
@@ -36,7 +33,7 @@ const Layout = ({ children, dir, className }) => {
         <NavigationBar />
       </MenuContextProvider>
       <SanityApiContextProvider>
-        <main className={className} dir={isHebrew ? "rtl" : "ltr"} >{children}</main>
+        <main className={className}>{children}</main>
       </SanityApiContextProvider>
       <Footer />
       <BackToTopButton />
