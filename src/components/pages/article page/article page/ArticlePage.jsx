@@ -23,7 +23,7 @@ const ArticlePage = () => {
   const [article, setArticle] = useState({
     title: "",
     paragraphs: [],
-    image: "",
+    internalImage: null,
   });
 
   const { articleId } = useParams();
@@ -40,19 +40,18 @@ const ArticlePage = () => {
         ...prevArticles,
         title: articleData?.mainTitle,
         paragraphs: articleData?.paragraphs,
-        image: articleData?.internalImage,
+        internalImage: articleData?.internalImage,
       };
     });
   }, [articleId, articles]);
 
-  // console.log(article.image.asset._ref);
-
   return (
     <div className={classes.article}>
-      {/* <img
+      <img
         className={classes["img-header"]}
+        src={article?.internalImage && urlFor(article.internalImage)}
         alt={`${article?.title} רקע תמונה`}
-      /> */}
+      />
       <div className={classes.data}>
         <Subtitle subtitle={article?.title} />
         <Paragraphs paragraphs={article?.paragraphs} />

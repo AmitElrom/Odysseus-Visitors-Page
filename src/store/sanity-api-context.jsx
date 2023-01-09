@@ -21,7 +21,6 @@ const SanityApiContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    console.log("sanity");
     contextFields.forEach((field) => {
       const query = `*[_type == "${field}"]`;
       client.fetch(query).then((info) =>
