@@ -43,4 +43,5 @@
 
 .flag {
   cursor: pointer;
+  border-radius: 7px;
 }

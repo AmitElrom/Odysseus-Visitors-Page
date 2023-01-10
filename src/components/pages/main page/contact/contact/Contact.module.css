@@ -3,12 +3,13 @@
   justify-content: center;
   align-items: center;
   background-color: var(--light-grey);
-  background: url(../../../../../assets/contact/background.png);
+  background-image: url(../../../../../assets/contact/background.png);
   position: relative;
   margin: 0 auto;
-  min-height: 170vh;
-  width: 100%;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  align-items: stretch;
 }
 
 .contact .data {
@@ -43,7 +44,6 @@
   }
   .contact .data {
     position: relative;
-    top: -5vh;
   }
 }
 

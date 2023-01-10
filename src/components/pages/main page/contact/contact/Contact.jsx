@@ -13,11 +13,6 @@ import classes from "./Contact.module.css";
 const Contact = () => {
   const { isMobile, width } = useContext(screenSizeContext);
 
-  const toLinkedinProfile = () => {
-    window.location.href =
-      "https://www.linkedin.com/company/odysseus-hedge-fund/";
-  };
-
   return (
     <div className={`${classes.contact}`}>
       <div className={classes.data}>
