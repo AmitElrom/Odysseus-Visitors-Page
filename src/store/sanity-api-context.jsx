@@ -21,6 +21,10 @@ const SanityApiContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
+    const query = `*[_type == "language"]`;
+    client.fetch(query).then((info) => {
+      console.log(info);
+    });
     contextFields.forEach((field) => {
       const query = `*[_type == "${field}"]`;
       client.fetch(query).then((info) =>
