@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import classes from "./FormInput.module.css";
 
@@ -15,13 +15,18 @@ const FormInput = ({
   return (
     <div className={`${classes["form-input"]} ${className}`}>
       {name === "message" ? (
-        <textarea
-          placeholder={placeholder}
-          name={name}
-          value={value}
-          onChange={onChange}
-          onBlur={onBlur}
-        ></textarea>
+        <Fragment>
+          <textarea
+            placeholder={placeholder}
+            name={name}
+            value={value}
+            onChange={onChange}
+            onBlur={onBlur}
+          ></textarea>
+          <p className={classes["chars-counter"]} style={{ textAlign: "left" }}>
+            {value.length}/600
+          </p>
+        </Fragment>
       ) : (
         <input
           className={`${classes.input} ${
@@ -36,7 +41,7 @@ const FormInput = ({
         />
       )}
 
-      {error && <p>{error}</p>}
+      {error && <p className={classes.error}>{error}</p>}
     </div>
   );
 };

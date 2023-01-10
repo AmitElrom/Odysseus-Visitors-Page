@@ -82,13 +82,37 @@ const ContactForm = () => {
     },
   });
 
+  const changeInputHandler = (e) => {
+    const { name, value } = e.target;
+    switch (name) {
+      case "name":
+      case "topic":
+        if (value.length <= 100) {
+          formik.setFieldValue(name, value);
+        }
+        break;
+      case "email":
+        if (value.length <= 256) {
+          formik.setFieldValue(name, value);
+        }
+        break;
+      case "message":
+        if (value.length <= 600) {
+          formik.setFieldValue(name, value);
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
   const formInputsList = FORM_INPUTS.map((input) => {
     return (
       <FormInput
         key={input.name}
         {...input}
         value={formik.values[input.name]}
-        onChange={formik.handleChange}
+        onChange={changeInputHandler}
         onBlur={formik.handleBlur}
         error={
           formik.touched[input.name] && formik.errors[input.name]
