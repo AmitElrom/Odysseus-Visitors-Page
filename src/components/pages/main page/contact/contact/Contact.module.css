@@ -2,12 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--light-grey);
   background-image: url(../../../../../assets/contact/background.png);
   position: relative;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  width: 100%;
   background-position: center center;
   align-items: stretch;
 }
