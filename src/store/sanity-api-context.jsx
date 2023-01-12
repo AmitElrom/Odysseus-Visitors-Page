@@ -28,10 +28,8 @@ const SanityApiContextProvider = ({ children }) => {
     message: [],
   });
 
-  let language = sessionStorage.lng;
-
   const [languages, setLanguages] = useState({
-    language,
+    language: sessionStorage.getItem("lng"),
     languageData: {},
     languages: [],
   });
@@ -92,83 +90,46 @@ const SanityApiContextProvider = ({ children }) => {
         };
       });
     });
-
-    // dont use
-    contextFields.forEach((field) => {
-      const query = `*[_type == "${field}"]`;
-      client.fetch(query).then((info) =>
-        setData((prevData) => {
-          if (field === "about") {
-            const paragraphs = [...info[0]?.paragraphs];
-            return {
-              ...prevData,
-              about: {
-                ...info[0],
-                paragraphs: paragraphs.sort(
-                  (a, b) => parseFloat(a.id) - parseFloat(b.id)
-                ),
-              },
-            };
-          }
-          if (field === "values") {
-            const values = [...info];
-            return {
-              ...prevData,
-              values: values.sort(
-                (a, b) => parseFloat(a.id) - parseFloat(b.id)
-              ),
-            };
-          }
-          if (field === "articles") {
-            const articles = [...info];
-            const transformedArticles = articles
-              .sort((a, b) => parseFloat(a.id) - parseFloat(b.id))
-              .map((article) => {
-                return {
-                  ...article,
-                  paragraphs: article.paragraphs
-                    ? article.paragraphs.sort(
-                        (a, b) => parseFloat(a.id) - parseFloat(b.id)
-                      )
-                    : [],
-                };
-              });
-            return {
-              ...prevData,
-              articles: transformedArticles,
-            };
-          }
-          if (field === "message") {
-            return {
-              ...prevData,
-              message: info,
-            };
-          }
-        })
-      );
-    });
   }, []);
 
-  console.log(languages);
-
   const changeLanguageHandler = (lng = "") => {
-    if (languages.languages === 1) {
+    if (languages.languages?.length === 1) {
       return;
     }
-    if (languages.languages === 2) {
-      console.log("hello");
-      if (language === "" || language.toLowerCase() === "hebrew") {
-        sessionStorage.lng = languages.languages.find(
-          (language) =>
-            language.lng.toLowerCase() !== "" ||
-            language.lng.toLowerCase() !== "hebrew"
+    if (languages.languages?.length === 2) {
+      if (
+        !languages.language ||
+        languages.language?.toLowerCase() === "hebrew"
+      ) {
+        const languageData = languages.languages?.find(
+          (language) => language.lng?.toLowerCase() !== "hebrew"
         );
+        sessionStorage.setItem("lng", languageData?.lng);
+        setLanguages((prev) => {
+          return {
+            ...prev,
+            language: languageData?.lng,
+            languageData,
+          };
+        });
       } else {
-        sessionStorage.lng = lng;
+        const languageData = languages.languages?.find(
+          (language) => language.lng?.toLowerCase() === "hebrew"
+        );
+        sessionStorage.setItem("lng", "hebrew");
+        setLanguages((prev) => {
+          return {
+            ...prev,
+            language: languageData?.lng,
+            languageData,
+          };
+        });
       }
     } else {
     }
   };
+
+  console.log(languages);
 
   const { about, values, articles, message } = data;
 

@@ -17,10 +17,7 @@ import { urlFor } from "../../../../client";
 const Data = () => {
   const { toggleMenu } = useContext(menuContext);
   const { isMobile } = useContext(screenSizeContext);
-  // const { isHebrew, changeLanguageHandler } = useContext(languageContext);
   const { flag, lng, changeLanguageHandler } = useContext(sanityApiContext);
-
-  console.log(flag);
 
   return (
     <div
