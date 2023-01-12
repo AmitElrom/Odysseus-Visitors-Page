@@ -6,8 +6,12 @@ import classes from "./Main.module.css";
 import treesImg from "../../../../assets/main/trees.png";
 import treesMinImg from "../../../../assets/main/trees-min.png";
 import { ClipLoader } from "react-spinners";
+import { useContext } from "react";
+import { sanityApiContext } from "../../../../store/sanity-api-context";
 
 const Main = () => {
+  const { title, subtitle } = useContext(sanityApiContext);
+
   return (
     <div id="ראשי" className={classes.main}>
       <Suspense fallback={<ClipLoader />}>
@@ -19,8 +23,8 @@ const Main = () => {
         />
       </Suspense>
       <h1>
-        <div className={classes.title1}>קרן אודיסאוס</div>
-        <div className={classes.title2}>השקעה טכנולוגית</div>
+        <div className={classes.title1}>{title}</div>
+        <div className={classes.title2}>{subtitle}</div>
       </h1>
     </div>
   );

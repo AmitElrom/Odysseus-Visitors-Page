@@ -41,7 +41,13 @@
   }
 }
 
-.flag {
+.flag-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.flag-wrapper img {
   cursor: pointer;
-  border-radius: 7px;
+  height: 70%;
 }

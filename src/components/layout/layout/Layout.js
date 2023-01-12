@@ -34,7 +34,7 @@ const Layout = ({ children, dir, className }) => {
           <NavigationBar />
         </MenuContextProvider>
         <main className={className}>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
         <BackToTopButton />
       </div>
     </SanityApiContextProvider>

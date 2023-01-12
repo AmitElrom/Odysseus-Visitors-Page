@@ -1,0 +1,6 @@
+.legal-text {
+  position: absolute;
+  text-align: justify;
+  width: 80%;
+  color: var(--blue);
+}

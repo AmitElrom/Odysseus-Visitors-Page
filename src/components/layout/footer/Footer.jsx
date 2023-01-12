@@ -1,16 +1,18 @@
 import React, { useContext } from "react";
-import NewTabLink from "../../UI/new tab link/NewTabLink";
 import { IoLogoLinkedin } from "react-icons/io";
+import { screenSizeContext } from "../../../store/screen-size-context";
+
+import LegalText from "./legal text/LegalText";
+import NewTabLink from "../../UI/new tab link/NewTabLink";
 
 import classes from "./Footer.module.css";
-
-import { screenSizeContext } from "../../../store/screen-size-context";
 
 const Footer = () => {
   const { isMobile } = useContext(screenSizeContext);
 
   return (
     <footer className={classes.footer}>
+      {/* <LegalText /> */}
       <h2>
         <NewTabLink
           href="https://www.linkedin.com/in/amit-elrom/"

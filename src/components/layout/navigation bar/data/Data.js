@@ -10,7 +10,6 @@ import classes from "./Data.module.css";
 
 import { ReactComponent as IsraelFlagIcon } from "../../../../assets/navigation bar/flags/israel_flag.svg";
 import { ReactComponent as UkFlagIcon } from "../../../../assets/navigation bar/flags/great_britain_flag.svg";
-import { languageContext } from "../../../../store/language-context";
 import { sanityApiContext } from "../../../../store/sanity-api-context";
 import { urlFor } from "../../../../client";
 
@@ -60,11 +59,13 @@ const Data = () => {
               width={30}
             />
           )} */}
-          <img
-            onClick={changeLanguageHandler}
-            src={flag && urlFor(flag)}
-            alt={`${lng} flag icon`}
-          />
+          <div className={classes["flag-wrapper"]}>
+            <img
+              onClick={changeLanguageHandler}
+              src={flag && urlFor(flag)}
+              alt={`${lng} flag icon`}
+            />
+          </div>
         </Fragment>
       )}
     </div>
