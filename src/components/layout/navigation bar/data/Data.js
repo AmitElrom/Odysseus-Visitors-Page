@@ -12,45 +12,62 @@ import { ReactComponent as IsraelFlagIcon } from "../../../../assets/navigation 
 import { ReactComponent as UkFlagIcon } from "../../../../assets/navigation bar/flags/great_britain_flag.svg";
 import { languageContext } from "../../../../store/language-context";
 import { sanityApiContext } from "../../../../store/sanity-api-context";
+import { urlFor } from "../../../../client";
 
 const Data = () => {
   const { toggleMenu } = useContext(menuContext);
   const { isMobile } = useContext(screenSizeContext);
-  const { isHebrew, changeLanguageHandler } = useContext(languageContext);
-  const { language } = useContext(sanityApiContext);
+  // const { isHebrew, changeLanguageHandler } = useContext(languageContext);
+  const { flag, lng, changeLanguageHandler } = useContext(sanityApiContext);
+
+  console.log(flag);
 
   return (
     <div
-      className={`${classes.data} ${isMobile ? classes["data-mobile"] : undefined
-        }`}
+      className={`${classes.data} ${
+        isMobile ? classes["data-mobile"] : undefined
+      }`}
     >
       {!isMobile ? (
         <Fragment>
           <Logo />
           {!isMobile ? <Menu /> : <ToggleButton onClick={toggleMenu} />}
-          {isHebrew ? <IsraelFlagIcon
-            onClick={changeLanguageHandler}
-            className={`${classes["item-left"]} ${classes.flag}`}
-            width={30}
-          /> : <UkFlagIcon
-            onClick={changeLanguageHandler}
-            className={`${classes["item-left"]} ${classes.flag}`}
-            width={30}
-          />}
+          {/* {isHebrew ? (
+            <IsraelFlagIcon
+              // onClick={changeLanguageHandler}
+              className={`${classes["item-left"]} ${classes.flag}`}
+              width={30}
+            />
+          ) : (
+            <UkFlagIcon
+              // onClick={changeLanguageHandler}
+              className={`${classes["item-left"]} ${classes.flag}`}
+              width={30}
+            />
+          )} */}
         </Fragment>
       ) : (
         <Fragment>
           <ToggleButton onClick={toggleMenu} />
           <Logo className={classes.flag} />
-          {isHebrew ? <IsraelFlagIcon
+          {/* {isHebrew ? (
+            <IsraelFlagIcon
+              onClick={changeLanguageHandler}
+              className={classes.flag}
+              width={30}
+            />
+          ) : (
+            <UkFlagIcon
+              onClick={changeLanguageHandler}
+              className={classes.flag}
+              width={30}
+            />
+          )} */}
+          <img
             onClick={changeLanguageHandler}
-            className={classes.flag}
-            width={30}
-          /> : <UkFlagIcon
-            onClick={changeLanguageHandler}
-            className={classes.flag}
-            width={30}
-          />}
+            src={flag && urlFor(flag)}
+            alt={`${lng} flag icon`}
+          />
         </Fragment>
       )}
     </div>

@@ -28,16 +28,16 @@ const Layout = ({ children, dir, className }) => {
   }, [sessionStorage.getItem("main-page-scroll-to")]);
 
   return (
-    <div dir={dir}>
-      <MenuContextProvider>
-        <NavigationBar />
-      </MenuContextProvider>
-      <SanityApiContextProvider>
+    <SanityApiContextProvider>
+      <div dir={dir}>
+        <MenuContextProvider>
+          <NavigationBar />
+        </MenuContextProvider>
         <main className={className}>{children}</main>
-      </SanityApiContextProvider>
-      <Footer />
-      <BackToTopButton />
-    </div>
+        <Footer />
+        <BackToTopButton />
+      </div>
+    </SanityApiContextProvider>
   );
 };
 

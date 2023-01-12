@@ -4,10 +4,18 @@ import { createContext } from "react";
 import { client } from "../client";
 
 export const sanityApiContext = createContext({
+  flag: "",
+  lng: "",
+  title: "",
+  subtitle: "",
   about: {},
   values: [],
   articles: [],
   message: [],
+  successMessage: "",
+  errorMessage: "",
+  legalText: "",
+  changeLanguageHandler: () => {},
 });
 
 const contextFields = ["about", "values", "articles", "message"];
@@ -31,7 +39,6 @@ const SanityApiContextProvider = ({ children }) => {
   useEffect(() => {
     const query = `*[_type == "language"]`;
     client.fetch(query).then((info) => {
-      console.log(info);
       const languagesFromApi = info?.map((lng) => {
         return {
           about: {
@@ -77,7 +84,10 @@ const SanityApiContextProvider = ({ children }) => {
 
         return {
           ...prev,
-          languageData: { ...requestedLng },
+          languageData: {
+            ...requestedLng,
+            lng: `${lng.charAt(0).toUpperCase()}${lng.slice(1)}`,
+          },
           languages: [...languagesFromApi],
         };
       });
@@ -139,8 +149,26 @@ const SanityApiContextProvider = ({ children }) => {
     });
   }, []);
 
-  console.log(languages.languageData);
-  console.log(data);
+  console.log(languages);
+
+  const changeLanguageHandler = (lng = "") => {
+    if (languages.languages === 1) {
+      return;
+    }
+    if (languages.languages === 2) {
+      console.log("hello");
+      if (language === "" || language.toLowerCase() === "hebrew") {
+        sessionStorage.lng = languages.languages.find(
+          (language) =>
+            language.lng.toLowerCase() !== "" ||
+            language.lng.toLowerCase() !== "hebrew"
+        );
+      } else {
+        sessionStorage.lng = lng;
+      }
+    } else {
+    }
+  };
 
   const { about, values, articles, message } = data;
 
@@ -153,6 +181,7 @@ const SanityApiContextProvider = ({ children }) => {
     // values: languages?.languageData?.values,
     ...languages.languageData,
     language: languages.language,
+    changeLanguageHandler,
     // message,
   };
 
