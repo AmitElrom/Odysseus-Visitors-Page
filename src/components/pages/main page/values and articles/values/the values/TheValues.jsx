@@ -8,8 +8,8 @@ import classes from "./TheValues.module.css";
 const TheValues = () => {
   const { values } = useContext(sanityApiContext);
 
-  const valuesList = values.map((value) => {
-    return <Value key={value._id} value={value} />;
+  const valuesList = values?.map((value) => {
+    return <Value key={value._key} value={value} />;
   });
 
   return <div className={classes.values}>{valuesList}</div>;

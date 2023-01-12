@@ -11,11 +11,13 @@ import classes from "./Data.module.css";
 import { ReactComponent as IsraelFlagIcon } from "../../../../assets/navigation bar/flags/israel_flag.svg";
 import { ReactComponent as UkFlagIcon } from "../../../../assets/navigation bar/flags/great_britain_flag.svg";
 import { languageContext } from "../../../../store/language-context";
+import { sanityApiContext } from "../../../../store/sanity-api-context";
 
 const Data = () => {
   const { toggleMenu } = useContext(menuContext);
   const { isMobile } = useContext(screenSizeContext);
   const { isHebrew, changeLanguageHandler } = useContext(languageContext);
+  const { language } = useContext(sanityApiContext);
 
   return (
     <div

@@ -7,7 +7,6 @@ import Menu from "../menu/menu/Menu";
 import classes from "./NavigationBar.module.css";
 
 const NavigationBar = () => {
-
   const { isMenuOpen } = useContext(menuContext);
 
   return (
