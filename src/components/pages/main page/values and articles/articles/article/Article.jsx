@@ -5,11 +5,13 @@ import { screenSizeContext } from "../../../../../../store/screen-size-context";
 import { urlFor } from "../../../../../../client";
 
 import classes from "./Article.module.css";
+import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 const Article = ({ article }) => {
   const navigate = useNavigate();
 
   const { isMobile } = useContext(screenSizeContext);
+  const { articleButton } = useContext(sanityApiContext);
 
   const navigateToArticleHandler = () => {
     navigate(`/articles/${article?.id}`);
@@ -42,7 +44,7 @@ const Article = ({ article }) => {
           {article?.textInArticles}
         </p>
         <div className={classes["button-read-more-div"]}>
-          <button onClick={navigateToArticleHandler}>קראו עוד</button>
+          <button onClick={navigateToArticleHandler}>{articleButton}</button>
         </div>
       </div>
     </div>

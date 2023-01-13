@@ -9,25 +9,19 @@ export const sanityApiContext = createContext({
   title: "",
   subtitle: "",
   about: {},
+  valuesTitle: "",
   values: [],
+  articlesTitle: "",
+  articleButton: "",
   articles: [],
-  message: [],
+  contactForm: {},
   successMessage: "",
   errorMessage: "",
   legalText: "",
   changeLanguageHandler: () => {},
 });
 
-const contextFields = ["about", "values", "articles", "message"];
-
 const SanityApiContextProvider = ({ children }) => {
-  const [data, setData] = useState({
-    about: {},
-    values: [],
-    articles: [],
-    message: [],
-  });
-
   const [languages, setLanguages] = useState({
     language: sessionStorage.getItem("lng"),
     languageData: {},
@@ -37,6 +31,7 @@ const SanityApiContextProvider = ({ children }) => {
   useEffect(() => {
     const query = `*[_type == "language"]`;
     client.fetch(query).then((info) => {
+      console.log("info", info);
       const languagesFromApi = info?.map((lng) => {
         return {
           about: {
@@ -45,6 +40,8 @@ const SanityApiContextProvider = ({ children }) => {
               (a, b) => parseFloat(a.id) - parseFloat(b.id)
             ),
           },
+          articlesTitle: lng?.articlesTitle,
+          articleButton: lng?.articleButton,
           articles: lng?.articles
             .sort((a, b) => parseFloat(a.id) - parseFloat(b.id))
             .map((article) => {
@@ -57,9 +54,11 @@ const SanityApiContextProvider = ({ children }) => {
                   : [],
               };
             }),
+          valuesTitle: lng?.valuesTitle,
           values: lng?.values.sort(
             (a, b) => parseFloat(a.id) - parseFloat(b.id)
           ),
+          contactForm: lng?.contactForm,
           successMessage: lng?.successMessage,
           errorMessage: lng?.errorMessage,
           flag: lng?.flag,
@@ -131,19 +130,10 @@ const SanityApiContextProvider = ({ children }) => {
 
   console.log(languages);
 
-  const { about, values, articles, message } = data;
-
   const contextValue = {
-    // about,
-    // values,
-    // articles,
-    // articles: languages?.languageData?.articles,
-    // about: languages?.languageData?.about,
-    // values: languages?.languageData?.values,
     ...languages.languageData,
     language: languages.language,
     changeLanguageHandler,
-    // message,
   };
 
   return (
