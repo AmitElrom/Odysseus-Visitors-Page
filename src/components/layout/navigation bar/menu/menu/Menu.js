@@ -27,14 +27,13 @@ const Menu = ({ isMobile, className }) => {
   useClickOutside(menuRef);
 
   const titlesList = !isMobile
-    ? menu.map((title, index) => {
-        return <MenuItem key={index} title={title} />;
-      })
-    : menu
-        .filter((title) => title !== "/")
-        .map((title, index) => {
-          return <MenuItem isMobile={isMobile} key={index} title={title} />;
-        });
+    ? menu?.map((title, index) => {
+      return <MenuItem key={index} title={title} />;
+    })
+    : menu?.filter((title) => title !== "/")
+      .map((title, index) => {
+        return <MenuItem isMobile={isMobile} key={index} title={title} />;
+      });
 
   const menuClasses = !isMobile ? classes.menu : classes["menu-mobile"];
 
