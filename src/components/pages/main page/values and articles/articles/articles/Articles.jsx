@@ -16,7 +16,7 @@ const Articles = () => {
   return (
     <div className={classes.container}>
       <div className={`blocks ${classes.articles}`}>
-        <Subtitle subtitle={articlesTitle} id="מאמרים" />
+        <Subtitle subtitle={articlesTitle} id={articlesTitle} />
         <TheArticles />
       </div>
       <img

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useContext } from "react";
 import useClickOutside from "../../../../../hooks/use-click-outside";
-import { languageContext } from "../../../../../store/language-context";
+import { sanityApiContext } from "../../../../../store/sanity-api-context";
 import MenuItem from "../menu item/MenuItem";
 
 import classes from "./Menu.module.css";
@@ -19,21 +19,22 @@ const TITLES = [
 ];
 
 const Menu = ({ isMobile, className }) => {
-  const { isHebrew } = useContext(languageContext);
+  const { menu } = useContext(sanityApiContext);
+  console.log(menu);
 
   const menuRef = useRef();
 
   useClickOutside(menuRef);
 
   const titlesList = !isMobile
-    ? TITLES.map((title) => {
-        return <MenuItem key={title.id} title={title.title} />;
+    ? menu.map((title, index) => {
+        return <MenuItem key={index} title={title} />;
       })
-    : TITLES.filter((title) => title !== "/").map((title) => {
-        return (
-          <MenuItem isMobile={isMobile} key={title.id} title={title.title} />
-        );
-      });
+    : menu
+        .filter((title) => title !== "/")
+        .map((title, index) => {
+          return <MenuItem isMobile={isMobile} key={index} title={title} />;
+        });
 
   const menuClasses = !isMobile ? classes.menu : classes["menu-mobile"];
 

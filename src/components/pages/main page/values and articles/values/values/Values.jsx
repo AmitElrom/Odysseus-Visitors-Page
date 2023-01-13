@@ -16,7 +16,7 @@ const Values = () => {
   return (
     <div className={classes.container}>
       <div className={`${classes.values}`}>
-        <Subtitle subtitle={valuesTitle} id="ערכי הקרן" />
+        <Subtitle subtitle={valuesTitle} id={valuesTitle} />
         <TheValues />
       </div>
       <img

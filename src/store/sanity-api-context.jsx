@@ -6,6 +6,7 @@ import { client } from "../client";
 export const sanityApiContext = createContext({
   flag: "",
   lng: "",
+  menu: "",
   title: "",
   subtitle: "",
   about: {},
@@ -67,6 +68,7 @@ const SanityApiContextProvider = ({ children }) => {
           legalText: lng?.legalText,
           title: lng?.mainTitle,
           subtitle: lng?.subtitle,
+          menu: lng?.menu,
         };
       });
       setLanguages((prev) => {

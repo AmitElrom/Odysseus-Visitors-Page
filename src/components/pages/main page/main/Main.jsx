@@ -10,10 +10,10 @@ import { useContext } from "react";
 import { sanityApiContext } from "../../../../store/sanity-api-context";
 
 const Main = () => {
-  const { title, subtitle } = useContext(sanityApiContext);
+  const { title, subtitle, menu } = useContext(sanityApiContext);
 
   return (
-    <div id="ראשי" className={classes.main}>
+    <div id={menu && menu[0]} className={classes.main}>
       <Suspense fallback={<ClipLoader />}>
         <LazyLoadImage
           src={treesImg}

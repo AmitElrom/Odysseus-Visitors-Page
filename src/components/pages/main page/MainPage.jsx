@@ -13,7 +13,7 @@ const MainPage = () => {
       <About />
       <ValuesAndArticles />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };

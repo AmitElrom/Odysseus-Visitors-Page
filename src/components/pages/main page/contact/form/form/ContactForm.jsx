@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -10,28 +10,39 @@ import Message from "../../../../../UI/message/Message";
 import classes from "./ContactForm.module.css";
 
 import { client } from "../../../../../../client";
-
-const FORM_INPUTS = [
-  {
-    placeholder: "שם מלא",
-    name: "name",
-  },
-  {
-    placeholder: "נושא הפנייה",
-    name: "topic",
-  },
-  {
-    placeholder: "מייל",
-    name: "email",
-    type: "email",
-  },
-  {
-    placeholder: "הודעה",
-    name: "message",
-  },
-];
+import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 const ContactForm = () => {
+  const [formInputs, setFormInputs] = useState([
+    {
+      name: "name",
+    },
+    {
+      name: "topic",
+    },
+    {
+      name: "email",
+      type: "email",
+    },
+    {
+      name: "message",
+    },
+  ]);
+  const { contactForm } = useContext(sanityApiContext);
+
+  useEffect(() => {
+    setFormInputs((prev) => {
+      const transformedInputs = prev.map((input) => {
+        return {
+          ...input,
+          placeholder: contactForm?.[input?.name],
+        };
+      });
+
+      return transformedInputs;
+    });
+  }, [contactForm]);
+
   const [isLoading, setIsLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -106,7 +117,7 @@ const ContactForm = () => {
     }
   };
 
-  const formInputsList = FORM_INPUTS.map((input) => {
+  const formInputsList = formInputs?.map((input) => {
     return (
       <FormInput
         key={input.name}
@@ -130,7 +141,7 @@ const ContactForm = () => {
         <div className={classes.inputs}>{formInputsList}</div>
         {isLoading && <ClipLoader color="var(--cream6)" />}
         <div className={classes["button-div"]}>
-          <button type="submit">שלח</button>
+          <button type="submit">{contactForm?.sendButton}</button>
         </div>
       </form>
     </div>

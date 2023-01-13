@@ -9,21 +9,24 @@ import Subtitle from "../../../../UI/subtitle/Subtitle";
 import ButtonMailto from "./button mail to/ButtonMailTo";
 
 import classes from "./Contact.module.css";
+import { sanityApiContext } from "../../../../../store/sanity-api-context";
 
 const Contact = () => {
   const { isMobile, width } = useContext(screenSizeContext);
+  const { contactForm } = useContext(sanityApiContext);
 
   return (
     <div className={`${classes.contact}`}>
       <div className={classes.data}>
         <Subtitle
-          subtitle="יצירת קשר"
-          id="יצירת קשר"
+          subtitle={contactForm?.title}
+          id={contactForm?.title}
           className={classes.headline}
         />
         <ContactForm />
         <div className={classes["contact-details"]}>
-          <span>ליאור - </span>
+          <span>{contactForm?.addressee} - </span>
+          {/* <span>ליאור - </span> */}
           <span className={classes["contact-details-email"]}>
             <ButtonMailto
               mailto="mailto:lior@odysseus-hedgefunds.com"
@@ -36,9 +39,10 @@ const Contact = () => {
               className={
                 isMobile ? classes["contact-details-phone-mobile"] : undefined
               }
-              href={isMobile ? "tel:0522803699" : undefined}
+              href={isMobile ? `tel:${contactForm?.phoneNumber}` : undefined}
             >
-              052-2803699
+              {/* 052-2803699 */}
+              {contactForm?.phoneNumberDisplayed}
             </a>
           </span>
           {width > 500 ? (
