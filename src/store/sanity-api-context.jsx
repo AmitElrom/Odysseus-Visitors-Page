@@ -6,6 +6,7 @@ import { client } from "../client";
 export const sanityApiContext = createContext({
   flag: "",
   lng: "",
+  ltr: false,
   menu: "",
   title: "",
   subtitle: "",
@@ -32,7 +33,6 @@ const SanityApiContextProvider = ({ children }) => {
   useEffect(() => {
     const query = `*[_type == "language"]`;
     client.fetch(query).then((info) => {
-      console.log("info", info);
       const languagesFromApi = info?.map((lng) => {
         return {
           about: {
@@ -81,11 +81,16 @@ const SanityApiContextProvider = ({ children }) => {
           (language) => language?.lng === lng
         );
 
+        !prev.language || prev.language === "hebrew" || !requestedLng?.ltr
+          ? sessionStorage.setItem("ltr", false)
+          : sessionStorage.setItem("ltr", true);
+
         return {
           ...prev,
           languageData: {
             ...requestedLng,
             lng: `${lng.charAt(0).toUpperCase()}${lng.slice(1)}`,
+            ltr: JSON.parse(sessionStorage.ltr),
           },
           languages: [...languagesFromApi],
         };
@@ -106,6 +111,7 @@ const SanityApiContextProvider = ({ children }) => {
           (language) => language.lng?.toLowerCase() !== "hebrew"
         );
         sessionStorage.setItem("lng", languageData?.lng);
+        sessionStorage.setItem("ltr", languageData?.ltr);
         setLanguages((prev) => {
           return {
             ...prev,
@@ -118,6 +124,7 @@ const SanityApiContextProvider = ({ children }) => {
           (language) => language.lng?.toLowerCase() === "hebrew"
         );
         sessionStorage.setItem("lng", "hebrew");
+        sessionStorage.setItem("ltr", false);
         setLanguages((prev) => {
           return {
             ...prev,
@@ -127,6 +134,18 @@ const SanityApiContextProvider = ({ children }) => {
         });
       }
     } else {
+      const languageData = languages.languages?.find(
+        (language) => language.lng?.toLowerCase() === lng.toLowerCase()
+      );
+      sessionStorage.setItem("lng", lng);
+      sessionStorage.setItem("ltr", languageData?.ltr);
+      setLanguages((prev) => {
+        return {
+          ...prev,
+          language: languageData?.lng,
+          languageData,
+        };
+      });
     }
   };
 

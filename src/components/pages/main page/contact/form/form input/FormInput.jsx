@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import { useContext } from "react";
+import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 import classes from "./FormInput.module.css";
 
@@ -12,6 +14,8 @@ const FormInput = ({
   onChange,
   onBlur,
 }) => {
+  const { ltr } = useContext(sanityApiContext);
+
   return (
     <div className={`${classes["form-input"]} ${className}`}>
       {name === "message" ? (
@@ -23,7 +27,10 @@ const FormInput = ({
             onChange={onChange}
             onBlur={onBlur}
           ></textarea>
-          <p className={classes["chars-counter"]} style={{ textAlign: "left" }}>
+          <p
+            className={classes["chars-counter"]}
+            style={ltr ? { textAlign: "right" } : { textAlign: "left" }}
+          >
             {value.length}/600
           </p>
         </Fragment>

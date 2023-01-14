@@ -6,6 +6,10 @@
   background-color: transparent;
 }
 
+.article-ltr {
+  text-align: left;
+}
+
 .article-mobile {
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 3px 3px 3px #231f2033;

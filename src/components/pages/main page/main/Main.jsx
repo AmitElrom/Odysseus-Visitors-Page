@@ -10,19 +10,20 @@ import { useContext } from "react";
 import { sanityApiContext } from "../../../../store/sanity-api-context";
 
 const Main = () => {
-  const { title, subtitle, menu } = useContext(sanityApiContext);
+  const { title, subtitle, menu, ltr } = useContext(sanityApiContext);
 
   return (
     <div id={menu && menu[0]} className={classes.main}>
       <Suspense fallback={<ClipLoader />}>
         <LazyLoadImage
+          className={`${classes.img} ${ltr ? classes["img-ltr"] : undefined}`}
           src={treesImg}
           alt="רקע עצים לגותרת של שם החברה קרן אודיסאוס"
           placeholderSrc={treesMinImg}
           effect="blur"
         />
       </Suspense>
-      <h1>
+      <h1 className={ltr ? classes["h1-ltr"] : undefined}>
         <div className={classes.title1}>{title}</div>
         <div className={classes.title2}>{subtitle}</div>
       </h1>

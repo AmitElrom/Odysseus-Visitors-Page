@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       {/* <LegalText /> */}
-      <h2>
+      <h2 dir="rtl">
         <NewTabLink
           href="https://www.linkedin.com/in/amit-elrom/"
           rel="noreferrer"

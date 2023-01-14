@@ -11,14 +11,20 @@ const Article = ({ article }) => {
   const navigate = useNavigate();
 
   const { isMobile } = useContext(screenSizeContext);
-  const { articleButton } = useContext(sanityApiContext);
+  const { articleButton, ltr } = useContext(sanityApiContext);
 
   const navigateToArticleHandler = () => {
     navigate(`/articles/${article?.id}`);
   };
 
   return (
-    <div className={!isMobile ? classes.article : classes["article-mobile"]}>
+    <div
+      className={
+        !isMobile
+          ? `${classes.article} ${ltr ? classes["article-ltr"] : undefined}`
+          : classes["article-mobile"]
+      }
+    >
       <div className={classes["img-div"]}>
         <img
           className={classes.img}

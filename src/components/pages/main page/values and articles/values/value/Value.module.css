@@ -10,6 +10,10 @@
   position: relative;
 }
 
+.value-ltr {
+  text-align: left;
+}
+
 @media (width >= 1650px) {
   .paragraphs {
     font-size: 1.1em;
@@ -38,7 +42,12 @@
   margin-right: 1rem;
   float: left;
   shape-outside: url("../../../../../../assets/values and articles/values/value\ blue\ triangle.svg");
-  shape-margin: 1.5rem;
+}
+
+.triangle-ltr {
+  float: right;
+  margin-right: -0.1rem;
+  shape-outside: url("../../../../../../assets/values\ and\ articles/values/mobile/english/creativity.svg");
 }
 
 .triangle-mobile {
@@ -65,7 +74,11 @@
   .triangle {
     float: left;
     shape-outside: url("../../../../../../assets/values and articles/values/value\ blue\ triangle.svg");
-    shape-margin: 6rem;
+    shape-margin: 1rem;
+  }
+  .triangle-ltr {
+    float: right;
+    shape-outside: url("../../../../../../assets/values\ and\ articles/values/mobile/english/creativity.svg");
   }
 }
 

@@ -6,15 +6,17 @@ import ValueTitle from "../value title/ValueTitle";
 import { urlFor } from "../../../../../../client";
 
 import classes from "./Value.module.css";
+import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 const Value = ({ value }) => {
   const { isMobile } = useContext(screenSizeContext);
+  const { ltr } = useContext(sanityApiContext);
 
   return (
     <div
-      className={`${classes.value} ${
-        isMobile ? classes["value-mobile"] : undefined
-      }`}
+      className={`${`${classes.value} ${
+        ltr ? classes["value-ltr"] : undefined
+      }`} ${isMobile ? classes["value-mobile"] : undefined}`}
     >
       {isMobile ? (
         <div className={classes["triangle-mobile"]}>
@@ -23,7 +25,9 @@ const Value = ({ value }) => {
         </div>
       ) : (
         <img
-          className={classes.triangle}
+          className={`${classes.triangle} ${
+            ltr ? classes["triangle-ltr"] : undefined
+          }`}
           src={urlFor(value?.icon)}
           alt={value?.title}
         />

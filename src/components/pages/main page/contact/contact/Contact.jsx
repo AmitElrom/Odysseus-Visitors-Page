@@ -13,10 +13,14 @@ import { sanityApiContext } from "../../../../../store/sanity-api-context";
 
 const Contact = () => {
   const { isMobile, width } = useContext(screenSizeContext);
-  const { contactForm } = useContext(sanityApiContext);
+  const { contactForm, ltr } = useContext(sanityApiContext);
 
   return (
-    <div className={`${classes.contact}`}>
+    <div
+      className={`${classes.contact} ${
+        ltr ? classes["contact-ltr"] : undefined
+      }`}
+    >
       <div className={classes.data}>
         <Subtitle
           subtitle={contactForm?.title}

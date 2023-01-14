@@ -12,6 +12,10 @@
   align-items: stretch;
 }
 
+.contact-ltr {
+  background-image: url(../../../../../assets/contact/background-ltr.png);
+}
+
 .contact .data {
   width: 100%;
   margin-top: 15vh;

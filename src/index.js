@@ -6,17 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 import { BrowserRouter } from "react-router-dom";
-import LanguageContextProvider from "./store/language-context";
 import ScreenSizeContextProvider from "./store/screen-size-context";
+import SanityApiContextProvider from "./store/sanity-api-context";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <ScreenSizeContextProvider>
-      <LanguageContextProvider>
+      <SanityApiContextProvider>
         <App />
-      </LanguageContextProvider>
+      </SanityApiContextProvider>
     </ScreenSizeContextProvider>
   </BrowserRouter>
 );

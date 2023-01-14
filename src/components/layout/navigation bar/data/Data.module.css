@@ -17,6 +17,10 @@
   margin-right: auto;
 }
 
+.item-right {
+  margin-left: auto;
+}
+
 @media (width <= 1150px) {
   .data {
     width: 70%;

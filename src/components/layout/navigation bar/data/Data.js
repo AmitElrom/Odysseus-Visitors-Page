@@ -16,49 +16,29 @@ import { urlFor } from "../../../../client";
 const Data = () => {
   const { toggleMenu } = useContext(menuContext);
   const { isMobile } = useContext(screenSizeContext);
-  const { flag, lng, changeLanguageHandler } = useContext(sanityApiContext);
+  const { flag, lng, changeLanguageHandler, ltr } = useContext(sanityApiContext);
 
   return (
     <div
-      className={`${classes.data} ${
-        isMobile ? classes["data-mobile"] : undefined
-      }`}
+      className={`${classes.data} ${isMobile ? classes["data-mobile"] : undefined
+        }`}
     >
       {!isMobile ? (
         <Fragment>
           <Logo />
           {!isMobile ? <Menu /> : <ToggleButton onClick={toggleMenu} />}
-          {/* {isHebrew ? (
-            <IsraelFlagIcon
-              // onClick={changeLanguageHandler}
-              className={`${classes["item-left"]} ${classes.flag}`}
-              width={30}
+          <div className={`${!ltr ? classes["item-left"] : classes["item-right"]} ${classes["flag-wrapper"]}`}>
+            <img
+              onClick={changeLanguageHandler}
+              src={flag && urlFor(flag)}
+              alt={`${lng} flag icon`}
             />
-          ) : (
-            <UkFlagIcon
-              // onClick={changeLanguageHandler}
-              className={`${classes["item-left"]} ${classes.flag}`}
-              width={30}
-            />
-          )} */}
+          </div>
         </Fragment>
       ) : (
         <Fragment>
           <ToggleButton onClick={toggleMenu} />
           <Logo className={classes.flag} />
-          {/* {isHebrew ? (
-            <IsraelFlagIcon
-              onClick={changeLanguageHandler}
-              className={classes.flag}
-              width={30}
-            />
-          ) : (
-            <UkFlagIcon
-              onClick={changeLanguageHandler}
-              className={classes.flag}
-              width={30}
-            />
-          )} */}
           <div className={classes["flag-wrapper"]}>
             <img
               onClick={changeLanguageHandler}
