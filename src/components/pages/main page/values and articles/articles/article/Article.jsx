@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { useNavigate } from "react-router";
 import { screenSizeContext } from "../../../../../../store/screen-size-context";
 
+import { sanityApiContext } from "../../../../../../store/sanity-api-context";
+
 import { urlFor } from "../../../../../../client";
 
 import classes from "./Article.module.css";
-import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 const Article = ({ article }) => {
   const navigate = useNavigate();

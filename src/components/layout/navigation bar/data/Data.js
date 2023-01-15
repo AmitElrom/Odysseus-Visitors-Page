@@ -8,15 +8,14 @@ import ToggleButton from "../toggle button/ToggleButton";
 
 import classes from "./Data.module.css";
 
-import { ReactComponent as IsraelFlagIcon } from "../../../../assets/navigation bar/flags/israel_flag.svg";
-import { ReactComponent as UkFlagIcon } from "../../../../assets/navigation bar/flags/great_britain_flag.svg";
 import { sanityApiContext } from "../../../../store/sanity-api-context";
 import { urlFor } from "../../../../client";
 
 const Data = () => {
   const { toggleMenu } = useContext(menuContext);
   const { isMobile } = useContext(screenSizeContext);
-  const { flag, lng, changeLanguageHandler, ltr } = useContext(sanityApiContext);
+  const { flag, lng, changeLanguageHandler, ltr } =
+    useContext(sanityApiContext);
 
   return (
     <div
@@ -27,7 +26,11 @@ const Data = () => {
         <Fragment>
           <Logo />
           {!isMobile ? <Menu /> : <ToggleButton onClick={toggleMenu} />}
-          <div className={`${!ltr ? classes["item-left"] : classes["item-right"]} ${classes["flag-wrapper"]}`}>
+          <div
+            className={`${!ltr ? classes["item-left"] : classes["item-right"]
+              } ${classes["flag-wrapper"]} ${!isMobile ? classes["flag-wrapper-nonmobile"] : undefined
+              }`}
+          >
             <img
               onClick={changeLanguageHandler}
               src={flag && urlFor(flag)}

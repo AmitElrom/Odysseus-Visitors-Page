@@ -28,6 +28,7 @@ const ContactForm = () => {
       name: "message",
     },
   ]);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const { contactForm } = useContext(sanityApiContext);
 
   useEffect(() => {
@@ -44,7 +45,6 @@ const ContactForm = () => {
   }, [contactForm]);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const formik = useFormik({
@@ -55,9 +55,11 @@ const ContactForm = () => {
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("שדה חובה"),
-      topic: Yup.string().required("שדה חובה"),
-      email: Yup.string().email("כתובת מייל לא תקינה").required("שדה חובה"),
+      name: Yup.string().required(contactForm?.nameError),
+      topic: Yup.string().required(contactForm?.topicError),
+      email: Yup.string()
+        .email(contactForm?.emailError)
+        .required(contactForm?.requiredEmailError),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {

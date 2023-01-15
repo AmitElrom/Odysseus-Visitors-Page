@@ -1,7 +1,7 @@
 .contact {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   background-image: url(../../../../../assets/contact/background.png);
   position: relative;
   margin: 0 auto;
@@ -9,26 +9,33 @@
   background-size: 100% 100%;
   width: 100%;
   background-position: center center;
-  align-items: stretch;
+  height: calc(fit-content + 20vh);
+  box-sizing: border-box;
 }
 
 .contact-ltr {
   background-image: url(../../../../../assets/contact/background-ltr.png);
 }
 
+.contact-mobile {
+  background-image: url(../../../../../assets/contact/bg-mobile.png);
+}
+
+.contact-mobile-ltr {
+  background-image: url(../../../../../assets/contact/bg-mobile-ltr.png);
+}
+
 .contact .data {
   width: 100%;
-  margin-top: 15vh;
+  padding-top: 8rem;
 }
 
 @media (width <= 1250px) {
   .contact {
     background-size: auto;
-    height: 105vh;
   }
   .contact .data {
     position: relative;
-    top: 5vh;
   }
 }
 
@@ -38,14 +45,10 @@
   }
   .contact .data {
     position: relative;
-    top: 0;
   }
 }
 
 @media (width <= 850px) {
-  .contact {
-    margin-bottom: -15vh;
-  }
   .contact .data {
     position: relative;
   }
@@ -53,11 +56,14 @@
 
 .contact .data .headline {
   color: var(--white);
+  padding-top: 2rem;
 }
 
 .contact-details {
   color: var(--white);
   margin-top: 1rem;
+  padding-bottom: 7rem;
+  background-color: var(--blue);
 }
 
 @media (width <= 420px) {
@@ -111,12 +117,11 @@
 
 .linkedin-icon-parent {
   position: relative;
+  flex-direction: column;
 }
 
 .linkedin-icon {
   cursor: pointer;
-  position: absolute;
-  bottom: 0;
 }
 
 .linkedin-icon-mobile {

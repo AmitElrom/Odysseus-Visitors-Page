@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { sanityApiContext } from "../../../store/sanity-api-context";
 

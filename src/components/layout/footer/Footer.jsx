@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      {/* <LegalText /> */}
+      <LegalText />
       <h2 dir="rtl">
         <NewTabLink
           href="https://www.linkedin.com/in/amit-elrom/"

@@ -11,7 +11,7 @@ import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 const Values = () => {
   const { isMobile } = useContext(screenSizeContext);
-  const { valuesTitle } = useContext(sanityApiContext);
+  const { valuesTitle, ltr } = useContext(sanityApiContext);
 
   return (
     <div className={classes.container}>
@@ -19,11 +19,13 @@ const Values = () => {
         <Subtitle subtitle={valuesTitle} id={valuesTitle} />
         <TheValues />
       </div>
-      <img
-        className={!isMobile ? classes["tech-bg"] : classes["tech-bg-mobile"]}
-        src={techBgImg}
-        alt="tech bg"
-      />
+      {!ltr && (
+        <img
+          className={!isMobile ? classes["tech-bg"] : classes["tech-bg-mobile"]}
+          src={techBgImg}
+          alt="tech bg"
+        />
+      )}
     </div>
   );
 };

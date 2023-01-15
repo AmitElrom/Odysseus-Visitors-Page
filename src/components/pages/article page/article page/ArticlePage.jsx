@@ -6,12 +6,11 @@ import { ClipLoader } from "react-spinners";
 
 import Contact from "../../main page/contact/contact/Contact";
 import Paragraphs from "../paragraphs/paragraphs/Paragraphs";
+import Subtitle from "../../../UI/subtitle/Subtitle";
 
 import { sanityApiContext } from "../../../../store/sanity-api-context";
 
 import { urlFor } from "../../../../client";
-
-import Subtitle from "../../../UI/subtitle/Subtitle";
 
 import classes from "./ArticlePage.module.css";
 
@@ -32,6 +31,7 @@ const ArticlePage = () => {
   const { articleId } = useParams();
 
   const { articles } = useContext(sanityApiContext);
+  const { ltr } = useContext(sanityApiContext);
 
   useEffect(() => {
     const articleData = articles?.find(
@@ -53,7 +53,9 @@ const ArticlePage = () => {
     <div className={classes.article}>
       <Suspense fallback={<ClipLoader />}>
         <LazyLoadImage
-          className={classes["img-header"]}
+          className={`${classes["img-header"]} ${
+            ltr ? classes["img-header-ltr"] : undefined
+          }`}
           src={article?.internalImage && urlFor(article.internalImage)}
           alt={`${article?.title} רקע תמונה`}
           placeholderSrc={

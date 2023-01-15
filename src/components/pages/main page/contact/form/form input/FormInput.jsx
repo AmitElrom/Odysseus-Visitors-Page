@@ -1,31 +1,32 @@
-import React, { Fragment } from "react";
-import { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 import classes from "./FormInput.module.css";
 
-const FormInput = ({
-  placeholder,
-  className,
-  error,
-  name,
-  type,
-  value,
-  onChange,
-  onBlur,
-}) => {
+const emailRegex =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+const FormInput = ({ placeholder, className, name, type, value, onChange }) => {
   const { ltr } = useContext(sanityApiContext);
 
   return (
     <div className={`${classes["form-input"]} ${className}`}>
+      <label
+        className={classes.label}
+        style={ltr ? { textAlign: "left" } : { textAlign: "right" }}
+        htmlFor={placeholder}
+      >
+        {placeholder}{" "}
+        {name !== "message" && <span className={classes.asterisk}> *</span>}
+      </label>
       {name === "message" ? (
         <Fragment>
           <textarea
+            id={placeholder}
             placeholder={placeholder}
             name={name}
             value={value}
             onChange={onChange}
-            onBlur={onBlur}
           ></textarea>
           <p
             className={classes["chars-counter"]}
@@ -36,19 +37,17 @@ const FormInput = ({
         </Fragment>
       ) : (
         <input
-          className={`${classes.input} ${
-            error ? classes["input-field-error"] : ""
-          }`}
+          id={placeholder}
+          className={classes.input}
           type={type && type}
           placeholder={placeholder}
           name={name}
           value={value}
           onChange={onChange}
-          onBlur={onBlur}
+          required={name !== "message"}
+          pattern={name === "email" ? emailRegex : undefined}
         />
       )}
-
-      {error && <p className={classes.error}>{error}</p>}
     </div>
   );
 };

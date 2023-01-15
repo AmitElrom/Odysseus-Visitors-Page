@@ -1,4 +1,3 @@
-import React from "react";
 import { useContext } from "react";
 
 import { screenSizeContext } from "../../../store/screen-size-context";

@@ -1,16 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { scroller } from "react-scroll";
 import { useLocation } from "react-router";
 
 import MenuContextProvider from "../../../store/menu-context";
-import SanityApiContextProvider from "../../../store/sanity-api-context";
 
 import NavigationBar from "../navigation bar/navigation bar/NavigationBar";
 import Footer from "../footer/Footer";
 import BackToTopButton from "../../UI/back to top button/BackToTopButton";
 
 const Layout = ({ children, dir, className }) => {
-
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -22,17 +20,19 @@ const Layout = ({ children, dir, className }) => {
         offset: -100,
         duration: 500,
       });
-      sessionStorage.removeItem("main-page-scroll-to")
+      sessionStorage.removeItem("main-page-scroll-to");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionStorage.getItem("main-page-scroll-to")]);
 
   return (
     <div dir={dir}>
-      <MenuContextProvider>
-        <NavigationBar />
-      </MenuContextProvider>
-      <main className={className}>{children}</main>
+      <div>
+        <MenuContextProvider>
+          <NavigationBar />
+        </MenuContextProvider>
+        <main className={className}>{children}</main>
+      </div>
       <Footer />
       <BackToTopButton />
     </div>

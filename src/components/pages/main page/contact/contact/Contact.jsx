@@ -17,9 +17,15 @@ const Contact = () => {
 
   return (
     <div
-      className={`${classes.contact} ${
-        ltr ? classes["contact-ltr"] : undefined
-      }`}
+      className={`${classes["contact"]}
+        ${
+          !isMobile
+            ? `${ltr ? classes["contact-ltr"] : undefined}`
+            : `${
+                ltr ? classes["contact-mobile-ltr"] : classes["contact-mobile"]
+              }`
+        }
+      `}
     >
       <div className={classes.data}>
         <Subtitle
@@ -29,26 +35,57 @@ const Contact = () => {
         />
         <ContactForm />
         <div className={classes["contact-details"]}>
-          <span>{contactForm?.addressee} - </span>
-          {/* <span>ליאור - </span> */}
-          <span className={classes["contact-details-email"]}>
-            <ButtonMailto
-              mailto="mailto:lior@odysseus-hedgefunds.com"
-              label="lior@odysseus-hedgefunds.com"
-            />
-          </span>
-          <span className={classes["contact-details-slash"]}>/</span>
-          <span className={classes["contact-details-phone"]}>
-            <a
-              className={
-                isMobile ? classes["contact-details-phone-mobile"] : undefined
-              }
-              href={isMobile ? `tel:${contactForm?.phoneNumber}` : undefined}
-            >
-              {/* 052-2803699 */}
-              {contactForm?.phoneNumberDisplayed}
-            </a>
-          </span>
+          {!ltr ? (
+            <Fragment>
+              <span>{contactForm?.addressee} - </span>
+              <span className={classes["contact-details-email"]}>
+                <ButtonMailto
+                  mailto="mailto:lior@odysseus-hedgefunds.com"
+                  label="lior@odysseus-hedgefunds.com"
+                />
+              </span>
+              <span className={classes["contact-details-slash"]}>/</span>
+              <span className={classes["contact-details-phone"]}>
+                <a
+                  className={
+                    isMobile
+                      ? classes["contact-details-phone-mobile"]
+                      : undefined
+                  }
+                  href={
+                    isMobile ? `tel:${contactForm?.phoneNumber}` : undefined
+                  }
+                >
+                  {contactForm?.phoneNumberDisplayed}
+                </a>
+              </span>
+            </Fragment>
+          ) : (
+            <Fragment>
+              <span className={classes["contact-details-email"]}>
+                <ButtonMailto
+                  mailto="mailto:lior@odysseus-hedgefunds.com"
+                  label="lior@odysseus-hedgefunds.com"
+                />
+              </span>
+              <span className={classes["contact-details-slash"]}>/</span>
+              <span>{contactForm?.addressee} - </span>
+              <span className={classes["contact-details-phone"]}>
+                <a
+                  className={
+                    isMobile
+                      ? classes["contact-details-phone-mobile"]
+                      : undefined
+                  }
+                  href={
+                    isMobile ? `tel:${contactForm?.phoneNumber}` : undefined
+                  }
+                >
+                  {contactForm?.phoneNumberDisplayed}
+                </a>
+              </span>
+            </Fragment>
+          )}
           {width > 500 ? (
             <Fragment>
               <span className={classes["contact-details-slash"]}>/</span>

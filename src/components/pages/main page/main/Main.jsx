@@ -1,13 +1,13 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { ClipLoader } from "react-spinners";
 
-import classes from "./Main.module.css";
+import { sanityApiContext } from "../../../../store/sanity-api-context";
 
 import treesImg from "../../../../assets/main/trees.png";
 import treesMinImg from "../../../../assets/main/trees-min.png";
-import { ClipLoader } from "react-spinners";
-import { useContext } from "react";
-import { sanityApiContext } from "../../../../store/sanity-api-context";
+
+import classes from "./Main.module.css";
 
 const Main = () => {
   const { title, subtitle, menu, ltr } = useContext(sanityApiContext);
@@ -23,7 +23,7 @@ const Main = () => {
           effect="blur"
         />
       </Suspense>
-      <h1 className={ltr ? classes["h1-ltr"] : undefined}>
+      <h1 className={ltr ? classes["h1-ltr"] : classes["h1-rtl"]}>
         <div className={classes.title1}>{title}</div>
         <div className={classes.title2}>{subtitle}</div>
       </h1>

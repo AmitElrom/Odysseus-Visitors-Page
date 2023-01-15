@@ -1,5 +1,7 @@
 .legal-text {
-  position: absolute;
+  margin: 1rem;
+  font-size: 13px;
+  display: block;
   text-align: justify;
   width: 80%;
   color: var(--blue);

@@ -32,7 +32,7 @@
 .data p {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .img-div {

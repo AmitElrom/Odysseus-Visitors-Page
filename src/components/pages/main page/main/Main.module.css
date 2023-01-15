@@ -24,7 +24,7 @@
   left: initial;
   right: 50%;
   text-align: left;
-  width: 100vw;
+  width: 100%;
 }
 
 @media (width > 1900px) {
@@ -74,6 +74,9 @@
     top: 12%;
     font-size: 2rem;
   }
+  .main .h1-rtl {
+    top: 8%;
+  }
 }
 
 @media (width <= 500px) {
@@ -88,6 +91,9 @@
   .main h1 {
     top: 12%;
     left: 40%;
+  }
+  .main .h1-rtl {
+    top: 8%;
   }
 }
 

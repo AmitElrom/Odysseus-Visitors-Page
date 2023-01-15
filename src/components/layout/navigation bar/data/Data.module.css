@@ -6,6 +6,7 @@
   margin: 0 auto;
   color: var(--blue);
   padding: 1% 0;
+  position: relative;
 }
 
 .data-mobile {
@@ -21,25 +22,7 @@
   margin-left: auto;
 }
 
-@media (width <= 1150px) {
-  .data {
-    width: 70%;
-  }
-}
-
-@media (width <= 950px) {
-  .data {
-    width: 80%;
-  }
-}
-
-@media (width <= 750px) {
-  .data {
-    width: 90%;
-  }
-}
-
-@media (width <= 700px) {
+@media (width <= 1100px) {
   .data {
     width: 95%;
   }
@@ -54,4 +37,17 @@
 .flag-wrapper img {
   cursor: pointer;
   height: 70%;
+  width: 100%;
+}
+
+@media (width <= 800px) {
+  .flag-wrapper-nonmobile img {
+    height: 50%;
+  }
+}
+
+@media (width <= 650px) {
+  .flag-wrapper-nonmobile img {
+    height: 40%;
+  }
 }
