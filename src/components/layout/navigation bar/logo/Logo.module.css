@@ -3,6 +3,18 @@
   display: flex;
 }
 
+@media (width <= 800px) {
+  .logo-nonmobile {
+    scale: 0.7;
+  }
+}
+
+@media (width <= 650px) {
+  .logo-nonmobile {
+    scale: 0.5;
+  }
+}
+
 .logo img {
   cursor: pointer;
 }

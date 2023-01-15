@@ -1,16 +1,17 @@
 .footer {
   width: 100%;
-  height: var(--footer-height);
+  height: auto;
   background-color: var(--light-grey);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  bottom: 0;
+  flex-direction: column;
+  position: absolute;
 }
 
 .footer h2 {
   margin-top: 0;
+  display: block;
 }
 
 .footer h2 span {

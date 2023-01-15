@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -10,30 +10,41 @@ import Message from "../../../../../UI/message/Message";
 import classes from "./ContactForm.module.css";
 
 import { client } from "../../../../../../client";
-
-const FORM_INPUTS = [
-  {
-    placeholder: "שם מלא",
-    name: "name",
-  },
-  {
-    placeholder: "נושא הפנייה",
-    name: "topic",
-  },
-  {
-    placeholder: "מייל",
-    name: "email",
-    type: "email",
-  },
-  {
-    placeholder: "הודעה",
-    name: "message",
-  },
-];
+import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 const ContactForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [formInputs, setFormInputs] = useState([
+    {
+      name: "name",
+    },
+    {
+      name: "topic",
+    },
+    {
+      name: "email",
+      type: "email",
+    },
+    {
+      name: "message",
+    },
+  ]);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const { contactForm } = useContext(sanityApiContext);
+
+  useEffect(() => {
+    setFormInputs((prev) => {
+      const transformedInputs = prev.map((input) => {
+        return {
+          ...input,
+          placeholder: contactForm?.[input?.name],
+        };
+      });
+
+      return transformedInputs;
+    });
+  }, [contactForm]);
+
+  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const formik = useFormik({
@@ -44,9 +55,11 @@ const ContactForm = () => {
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("שדה חובה"),
-      topic: Yup.string().required("שדה חובה"),
-      email: Yup.string().email("כתובת מייל לא תקינה").required("שדה חובה"),
+      name: Yup.string().required(contactForm?.nameError),
+      topic: Yup.string().required(contactForm?.topicError),
+      email: Yup.string()
+        .email(contactForm?.emailError)
+        .required(contactForm?.requiredEmailError),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
@@ -82,13 +95,37 @@ const ContactForm = () => {
     },
   });
 
-  const formInputsList = FORM_INPUTS.map((input) => {
+  const changeInputHandler = (e) => {
+    const { name, value } = e.target;
+    switch (name) {
+      case "name":
+      case "topic":
+        if (value.length <= 100) {
+          formik.setFieldValue(name, value);
+        }
+        break;
+      case "email":
+        if (value.length <= 256) {
+          formik.setFieldValue(name, value);
+        }
+        break;
+      case "message":
+        if (value.length <= 600) {
+          formik.setFieldValue(name, value);
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
+  const formInputsList = formInputs?.map((input) => {
     return (
       <FormInput
         key={input.name}
         {...input}
         value={formik.values[input.name]}
-        onChange={formik.handleChange}
+        onChange={changeInputHandler}
         onBlur={formik.handleBlur}
         error={
           formik.touched[input.name] && formik.errors[input.name]
@@ -106,7 +143,7 @@ const ContactForm = () => {
         <div className={classes.inputs}>{formInputsList}</div>
         {isLoading && <ClipLoader color="var(--cream6)" />}
         <div className={classes["button-div"]}>
-          <button type="submit">שלח</button>
+          <button type="submit">{contactForm?.sendButton}</button>
         </div>
       </form>
     </div>

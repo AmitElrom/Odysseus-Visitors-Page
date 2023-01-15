@@ -1,17 +1,26 @@
 .article {
   margin-top: var(--nav-height);
   min-height: calc(100vh - var(--nav-height));
-  background-image: url("../../../../assets/values\ and\ articles/tech web.png");
   background-color: var(--white);
+  background-image: url(../../../../assets/values\ and\ articles/tech\ web.png);
+}
+
+.article-ltr {
+  transform: scale(-1);
 }
 
 .img-header {
   width: 100%;
 }
 
+.img-header-ltr {
+  transform: scaleX(-1);
+}
+
 .data {
   margin: 0 auto;
   width: 80%;
+  margin-bottom: 1rem;
 }
 
 @media (width >= 1700px) {

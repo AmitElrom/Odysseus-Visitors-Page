@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap");
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   margin: 0 auto;
+  overflow-x: hidden;
   font-family: "Assistant", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

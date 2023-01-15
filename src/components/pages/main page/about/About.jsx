@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <div className={classes.about}>
-      <Subtitle subtitle={about?.title} id="אודות" />
+      <Subtitle subtitle={about?.title} id={about?.title} />
       <div className={classes.text}>{aboutParagraphsList}</div>
     </div>
   );

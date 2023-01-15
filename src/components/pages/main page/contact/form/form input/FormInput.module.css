@@ -3,12 +3,25 @@
   width: 100%;
 }
 
+.form-input .label {
+  cursor: pointer;
+  display: block;
+  margin: 0.2rem 0;
+  color: var(--white);
+}
+
+.form-input .label .asterisk {
+  color: red;
+  font-size: 1.3rem;
+}
+
 .form-input .input {
   font-size: 1.2rem;
   border: none;
   width: 100%;
   font-family: inherit;
   aspect-ratio: 217/11;
+  box-sizing: border-box;
 }
 
 .form-input .input:focus {
@@ -22,10 +35,15 @@
   border: none;
   width: 100%;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 .form-input textarea:focus {
   outline: 2.5px solid var(--cream4);
+}
+
+.chars-counter {
+  color: var(--white);
 }
 
 .form-input .input,
@@ -42,29 +60,4 @@
 .form-input textarea:-webkit-autofill:focus,
 .form-input textarea:-webkit-autofill:active {
   background-color: var(--light-grey);
-}
-
-.form-input p {
-  margin: 1px inherit;
-  padding: 1px inherit;
-  color: red;
-  font-size: 18px;
-}
-
-.input-field-error {
-  background-color: salmon;
-  outline: 2px solid red;
-}
-.input-field-error:focus {
-  outline: none !important;
-  border: 2px solid red;
-  background-color: salmon;
-}
-
-.form-input .input-field-error,
-.form-input .input-field-error:-webkit-autofill,
-.form-input .input-field-error:-webkit-autofill:hover,
-.form-input .input-field-error:-webkit-autofill:focus,
-.form-input .input-field-error:-webkit-autofill:active {
-  box-shadow: 0 0 0 30px salmon inset !important;
 }

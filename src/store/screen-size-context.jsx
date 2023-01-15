@@ -4,14 +4,14 @@ export const screenSizeContext = createContext({
   isMobile: false,
   width: 0,
   height: 0,
-  isLaptop: null,
+  isNotPhoneOrTablet: true,
 });
 
 const ScreenSizeContextProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 560);
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
-  const [isLaptop, setIsLaptop] = useState(null);
+  const [isNotPhoneOrTablet, setIsNotPhoneOrTablet] = useState(true);
 
   const updateMedia = () => {
     setIsMobile(window.innerWidth < 560);
@@ -25,14 +25,25 @@ const ScreenSizeContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    setIsLaptop(navigator.userAgent.toLowerCase().indexOf("laptop") !== -1);
+    const userAgent = navigator.userAgent;
+    const phoneRegex = /(iphone|ipod|android|blackberry|windows phone)/i;
+    const tabletRegex = /(ipad|tablet)/i;
+
+    setIsNotPhoneOrTablet(
+      !phoneRegex.test(userAgent) && !tabletRegex.test(userAgent)
+    );
   }, []);
+
+  useEffect(() => {
+    const root = document.getElementById("root");
+    root.style.setProperty("--nav-height", isNotPhoneOrTablet ? "10vh" : "7vh");
+  }, [isNotPhoneOrTablet]);
 
   const contextValue = {
     isMobile,
     width,
     height,
-    isLaptop,
+    isNotPhoneOrTablet,
   };
 
   return (

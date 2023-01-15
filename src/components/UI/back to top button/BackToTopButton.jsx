@@ -1,9 +1,11 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, useContext } from "react";
 import { IoMdArrowRoundUp } from "react-icons/io";
+import { sanityApiContext } from "../../../store/sanity-api-context";
 
 import classes from "./BackToTopButton.module.css";
 
 const BackToTopButton = () => {
+  const { ltr } = useContext(sanityApiContext);
   const [isBtnShown, setIsBtnShown] = useState(false);
 
   useEffect(() => {
@@ -26,6 +28,7 @@ const BackToTopButton = () => {
         <IoMdArrowRoundUp
           size={25}
           className={classes.button}
+          style={ltr ? { left: "1vw" } : { right: "1vw" }}
           onClick={scrollToTop}
         />
       )}
