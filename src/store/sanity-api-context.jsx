@@ -169,8 +169,6 @@ const SanityApiContextProvider = ({ children }) => {
     }
   };
 
-  console.log(languages);
-
   const contextValue = {
     ...languages.languageData,
     language: languages.language,
