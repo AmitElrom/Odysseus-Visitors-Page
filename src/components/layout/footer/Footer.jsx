@@ -6,12 +6,14 @@ import LegalText from "./legal text/LegalText";
 import NewTabLink from "../../UI/new tab link/NewTabLink";
 
 import classes from "./Footer.module.css";
+import Rights from "./rights/Rights";
 
 const Footer = () => {
   const { isMobile } = useContext(screenSizeContext);
 
   return (
     <footer className={classes.footer}>
+      <Rights />
       <LegalText />
       <h2 dir="rtl">
         <NewTabLink

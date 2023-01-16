@@ -20,6 +20,7 @@ export const sanityApiContext = createContext({
   successMessage: "",
   errorMessage: "",
   legalText: "",
+  rights: "",
   changeLanguageHandler: () => {},
 });
 
@@ -66,6 +67,7 @@ const SanityApiContextProvider = ({ children }) => {
           ltr: lng?.isLeftToRight,
           lng: lng?.language?.toLowerCase(),
           legalText: lng?.legalText,
+          rights: lng?.rights,
           title: lng?.mainTitle,
           subtitle: lng?.subtitle,
           menu: lng?.menu,
@@ -91,6 +93,10 @@ const SanityApiContextProvider = ({ children }) => {
             ...requestedLng,
             lng: `${lng.charAt(0).toUpperCase()}${lng.slice(1)}`,
             ltr: JSON.parse(sessionStorage.ltr),
+            flag: languagesFromApi?.find(
+              (language) =>
+                language?.lng.toLowerCase() !== requestedLng?.lng.toLowerCase()
+            ).flag,
           },
           languages: [...languagesFromApi],
         };
@@ -116,7 +122,14 @@ const SanityApiContextProvider = ({ children }) => {
           return {
             ...prev,
             language: languageData?.lng,
-            languageData,
+            languageData: {
+              ...languageData,
+              flag: prev.languages?.find(
+                (language) =>
+                  language?.lng.toLowerCase() !==
+                  languageData?.lng.toLowerCase()
+              ).flag,
+            },
           };
         });
       } else {
@@ -129,7 +142,14 @@ const SanityApiContextProvider = ({ children }) => {
           return {
             ...prev,
             language: languageData?.lng,
-            languageData,
+            languageData: {
+              ...languageData,
+              flag: prev.languages?.find(
+                (language) =>
+                  language?.lng.toLowerCase() !==
+                  languageData?.lng.toLowerCase()
+              ).flag,
+            },
           };
         });
       }
