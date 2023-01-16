@@ -2,6 +2,7 @@ import React, { Suspense, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ClipLoader } from "react-spinners";
 
+import { urlFor } from "../../../../client";
 import { sanityApiContext } from "../../../../store/sanity-api-context";
 
 import treesImg from "../../../../assets/main/trees.png";
@@ -10,16 +11,17 @@ import treesMinImg from "../../../../assets/main/trees-min.png";
 import classes from "./Main.module.css";
 
 const Main = () => {
-  const { title, subtitle, menu, ltr } = useContext(sanityApiContext);
+  const { title, subtitle, menu, ltr, mainImg, mainImgMin } =
+    useContext(sanityApiContext);
 
   return (
     <div id={menu && menu[0]} className={classes.main}>
       <Suspense fallback={<ClipLoader />}>
         <LazyLoadImage
           className={`${classes.img} ${ltr ? classes["img-ltr"] : undefined}`}
-          src={treesImg}
+          src={mainImg ? urlFor(mainImg) : treesImg}
           alt="רקע עצים לגותרת של שם החברה קרן אודיסאוס"
-          placeholderSrc={treesMinImg}
+          placeholderSrc={mainImgMin ? urlFor(mainImgMin) : treesMinImg}
           effect="blur"
         />
       </Suspense>

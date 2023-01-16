@@ -7,6 +7,8 @@ export const sanityApiContext = createContext({
   flag: "",
   lng: "",
   ltr: false,
+  mainImg: "",
+  mainImgMin: "",
   menu: "",
   title: "",
   subtitle: "",
@@ -71,6 +73,8 @@ const SanityApiContextProvider = ({ children }) => {
           title: lng?.mainTitle,
           subtitle: lng?.subtitle,
           menu: lng?.menu,
+          mainImg: lng?.mainImage,
+          mainImgMin: lng?.mainImageCompressed,
         };
       });
       setLanguages((prev) => {
