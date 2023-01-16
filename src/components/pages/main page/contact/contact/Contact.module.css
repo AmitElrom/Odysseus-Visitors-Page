@@ -7,9 +7,8 @@
   margin: 0 auto;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  width: 100%;
-  background-position: center center;
-  height: calc(fit-content + 20vh);
+  width: 100vw;
+  background-position: 50%;
   box-sizing: border-box;
 }
 
@@ -27,22 +26,16 @@
 
 .contact .data {
   width: 100%;
-  padding-top: 8rem;
+  padding-top: 10rem;
 }
 
 @media (width <= 1250px) {
-  .contact {
-    background-size: auto;
-  }
   .contact .data {
     position: relative;
   }
 }
 
 @media (width <= 1000px) {
-  .contact {
-    margin-bottom: -10vh;
-  }
   .contact .data {
     position: relative;
   }
@@ -56,13 +49,12 @@
 
 .contact .data .headline {
   color: var(--white);
-  padding-top: 2rem;
 }
 
 .contact-details {
   color: var(--white);
   margin-top: 1rem;
-  padding-bottom: 7rem;
+  padding-bottom: 4rem;
   background-color: var(--blue);
 }
 

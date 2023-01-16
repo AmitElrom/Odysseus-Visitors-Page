@@ -15,8 +15,9 @@ const MenuItem = ({ title, isMobile }) => {
   const { height } = useContext(screenSizeContext);
 
   const menuItemClasses = !isMobile
-    ? `${classes["menu-item"]} ${title !== "/" ? classes["menu-item-title"] : undefined
-    }`
+    ? `${classes["menu-item"]} ${
+        title !== "/" ? classes["menu-item-title"] : undefined
+      }`
     : classes["menu-item-mobile"];
 
   const clickMenuItemHandler = () => {
@@ -39,7 +40,10 @@ const MenuItem = ({ title, isMobile }) => {
     <Fragment>
       {title !== "/" ? (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a onClick={clickMenuItemHandler} className={`menuItem ${menuItemClasses}`}>
+        <a
+          onClick={clickMenuItemHandler}
+          className={`menuItem ${menuItemClasses}`}
+        >
           {title}
         </a>
       ) : (

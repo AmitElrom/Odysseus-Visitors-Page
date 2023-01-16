@@ -66,6 +66,10 @@
   font-size: 26px;
 }
 
+.mobile-ltr {
+  transform: scaleX(-1);
+}
+
 @media (width <= 1240px) {
   .value {
     aspect-ratio: 373/220;

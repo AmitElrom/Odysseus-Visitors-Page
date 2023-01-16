@@ -20,7 +20,11 @@ const Value = ({ value }) => {
     >
       {isMobile ? (
         <div className={classes["triangle-mobile"]}>
-          <img src={urlFor(value?.iconMobile)} alt={value?.title} />
+          <img
+            className={ltr ? classes["mobile-ltr"] : undefined}
+            src={urlFor(value?.iconMobile)}
+            alt={value?.title}
+          />
           <h3>{value?.title}</h3>
         </div>
       ) : (

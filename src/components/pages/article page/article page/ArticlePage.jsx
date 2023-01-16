@@ -30,8 +30,7 @@ const ArticlePage = () => {
 
   const { articleId } = useParams();
 
-  const { articles } = useContext(sanityApiContext);
-  const { ltr } = useContext(sanityApiContext);
+  const { articles, ltr } = useContext(sanityApiContext);
 
   useEffect(() => {
     const articleData = articles?.find(
