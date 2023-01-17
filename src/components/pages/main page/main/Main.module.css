@@ -1,6 +1,7 @@
 .main {
   width: 100%;
   background-color: var(--light-grey);
+  position: relative;
 }
 
 .main .img {
@@ -74,9 +75,6 @@
     top: 12%;
     font-size: 2rem;
   }
-  .main .h1-rtl {
-    top: 8%;
-  }
 }
 
 @media (width <= 500px) {
@@ -104,11 +102,19 @@
   }
 }
 
+@media (1340px <= width < 1550px) {
+  .main .h1-ltr {
+    left: 10%;
+    top: 22%;
+    font-size: 3.7rem;
+  }
+}
+
 @media (width < 1340px) {
   .main .h1-ltr {
     left: 10%;
-    top: 30%;
-    font-size: 4rem;
+    top: 22%;
+    font-size: 3.5rem;
   }
 }
 
@@ -119,14 +125,14 @@
   }
 }
 
-@media (width < 950px) {
+@media (width < 1050px) {
   .main .h1-ltr {
-    top: 20%;
+    top: 23%;
     font-size: 2.5rem;
   }
 }
 
-@media (width < 800px) {
+@media (width < 880px) {
   .main .h1-ltr {
     top: 20%;
     font-size: 2rem;
@@ -135,15 +141,15 @@
 
 @media (width < 700px) {
   .main .h1-ltr {
-    top: 15%;
-    font-size: 2rem;
+    top: 18%;
+    font-size: 1.7rem;
   }
 }
 
 @media (width < 650px) {
   .main .h1-ltr {
     left: 5%;
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -171,7 +177,6 @@
   .main h1 .title1 {
     font-size: 34px;
   }
-
   .main h1 .title2 {
     font-size: 36px;
   }
@@ -197,19 +202,19 @@
 
 @media (530px < width <= 600px) {
   .main .h1-ltr .title1 {
-    font-size: 28px;
+    font-size: 25px;
   }
   .main .h1-ltr .title2 {
-    font-size: 30px;
+    font-size: 27px;
   }
 }
 
 @media (490px < width <= 530px) {
   .main .h1-ltr .title1 {
-    font-size: 26px;
+    font-size: 23px;
   }
   .main .h1-ltr .title2 {
-    font-size: 28px;
+    font-size: 25px;
   }
 }
 
@@ -218,10 +223,10 @@
     top: 12%;
   }
   .main .h1-ltr .title1 {
-    font-size: 22px;
+    font-size: 21px;
   }
   .main .h1-ltr .title2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -230,10 +235,10 @@
     top: 11%;
   }
   .main .h1-ltr .title1 {
-    font-size: 20px;
+    font-size: 19px;
   }
   .main .h1-ltr .title2 {
-    font-size: 22px;
+    font-size: 21px;
   }
 }
 
@@ -242,10 +247,10 @@
     top: 10%;
   }
   .main .h1-ltr .title1 {
-    font-size: 18px;
+    font-size: 17px;
   }
   .main .h1-ltr .title2 {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
 
@@ -254,21 +259,21 @@
     top: 11%;
   }
   .main .h1-ltr .title1 {
-    font-size: 15px;
-  }
-  .main .h1-ltr .title2 {
-    font-size: 17px;
-  }
-}
-
-@media (250px < width <= 300px) {
-  .main .h1-ltr {
-    top: 11%;
-  }
-  .main .h1-ltr .title1 {
     font-size: 13px;
   }
   .main .h1-ltr .title2 {
     font-size: 15px;
+  }
+}
+
+@media (width <= 300px) {
+  .main .h1-ltr {
+    top: 11%;
+  }
+  .main .h1-ltr .title1 {
+    font-size: 11px;
+  }
+  .main .h1-ltr .title2 {
+    font-size: 13px;
   }
 }

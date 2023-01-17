@@ -14,21 +14,87 @@
   text-align: left;
 }
 
-@media (width >= 1650px) {
+@media (width >= 1350px) {
+  .paragraphs {
+    font-size: 1.07em;
+  }
+}
+
+@media (width >= 1420px) {
   .paragraphs {
     font-size: 1.1em;
   }
 }
 
-@media (width >= 1750px) {
+@media (width >= 1500px) {
   .paragraphs {
     font-size: 1.2em;
   }
 }
 
-@media (width >= 1850px) {
+@media (width >= 1650px) {
   .paragraphs {
     font-size: 1.3em;
+  }
+}
+
+@media (width >= 1750px) {
+  .paragraphs {
+    font-size: 1.35em;
+  }
+}
+
+@media (width >= 1850px) {
+  .paragraphs {
+    font-size: 1.38em;
+  }
+}
+
+@media (width >= 1900px) {
+  .paragraphs {
+    font-size: 1.42em;
+  }
+}
+
+@media (width >= 1940px) {
+  .paragraphs {
+    font-size: 1.45em;
+  }
+}
+
+@media (width >= 1980px) {
+  .paragraphs {
+    font-size: 1.48em;
+  }
+}
+
+@media (width >= 2010px) {
+  .paragraphs {
+    font-size: 1.51em;
+  }
+}
+
+@media (width >= 2050px) {
+  .paragraphs {
+    font-size: 1.54em;
+  }
+}
+
+@media (width >= 2090px) {
+  .paragraphs {
+    font-size: 1.57em;
+  }
+}
+
+@media (width >= 2140px) {
+  .paragraphs {
+    font-size: 1.62em;
+  }
+}
+
+@media (width >= 2170px) {
+  .paragraphs {
+    font-size: 1.65em;
   }
 }
 

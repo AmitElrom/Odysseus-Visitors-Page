@@ -23,9 +23,8 @@ const Logo = ({ className }) => {
   return (
     <div
       onClick={navigateToMain}
-      className={`${className} ${classes.logo} ${
-        !isMobile ? classes["logo-nonmobile"] : undefined
-      }`}
+      className={`${className} ${classes.logo} ${!isMobile ? classes["logo-nonmobile"] : undefined
+        }`}
     >
       <LogoIcon className={classes["the-logo"]} />
     </div>

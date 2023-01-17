@@ -11,7 +11,7 @@
 }
 
 .tech-bg {
-  max-width: 100%;
+  width: 100%;
   height: 70%;
   background-color: var(--white);
   background-repeat: repeat;

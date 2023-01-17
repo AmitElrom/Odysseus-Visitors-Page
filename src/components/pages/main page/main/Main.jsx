@@ -20,7 +20,7 @@ const Main = () => {
         <LazyLoadImage
           className={`${classes.img} ${ltr ? classes["img-ltr"] : undefined}`}
           src={mainImg ? urlFor(mainImg) : treesImg}
-          alt="רקע עצים לגותרת של שם החברה קרן אודיסאוס"
+          alt="רקע עצים על כותרת של שם החברה קרן אודיסאוס"
           placeholderSrc={mainImgMin ? urlFor(mainImgMin) : treesMinImg}
           effect="blur"
         />
