@@ -21,17 +21,19 @@ const Footer = () => {
           rel="noreferrer"
           target="_blank"
         >
-          <span
-            className={
-              !isMobile
-                ? classes["developer-name"]
-                : classes["developer-name-mobile"]
-            }
-          >
-            Amit Elrom - Web Development
-          </span>
-          <span className={classes["linkedin-icon"]}>
-            <IoLogoLinkedin />
+          <span>
+            <span
+              className={
+                !isMobile
+                  ? classes["developer-name"]
+                  : classes["developer-name-mobile"]
+              }
+            >
+              Amit Elrom - Web Development
+            </span>
+            <span className={classes["linkedin-icon"]}>
+              <IoLogoLinkedin />
+            </span>
           </span>
         </NewTabLink>
       </h2>

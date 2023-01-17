@@ -19,13 +19,17 @@
   align-items: center;
   color: var(--blue);
   cursor: pointer;
+  font-size: 16px;
+}
+
+@media (width < 560px) {
+  .footer h2 span {
+    font-size: 13px;
+  }
 }
 
 .developer-name {
   margin-left: 0.25rem;
-}
-
-.developer-name {
   all: unset;
   background-image: radial-gradient(
     closest-side at 50% 50%,
@@ -36,7 +40,7 @@
     #dfbe67 85%,
     #ddba60 100%
   );
-  background-size: 0% 3px;
+  background-size: 0% 1px;
   background-repeat: no-repeat;
   background-position: left bottom;
   transition: background-size 300ms ease-in-out;
@@ -50,7 +54,6 @@
 
 .developer-name-mobile {
   all: unset;
-  font-size: 4vw;
   background-image: radial-gradient(
     closest-side at 50% 50%,
     #fffcd7 0%,
@@ -60,7 +63,7 @@
     #dfbe67 85%,
     #ddba60 100%
   );
-  background-size: 100% 3px;
+  background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: left bottom;
   transform-origin: center;
