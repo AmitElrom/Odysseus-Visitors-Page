@@ -3,9 +3,6 @@ import { sanityApiContext } from "../../../../../../store/sanity-api-context";
 
 import classes from "./FormInput.module.css";
 
-const emailRegex =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-
 const FormInput = ({ placeholder, className, name, type, value, onChange }) => {
   const { ltr } = useContext(sanityApiContext);
 
@@ -45,7 +42,6 @@ const FormInput = ({ placeholder, className, name, type, value, onChange }) => {
           value={value}
           onChange={onChange}
           required={name !== "message"}
-          pattern={name === "email" ? emailRegex : undefined}
         />
       )}
     </div>
