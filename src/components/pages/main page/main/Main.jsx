@@ -1,6 +1,7 @@
-import React, { Suspense, useContext } from "react";
+import React, { Suspense, useContext, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ClipLoader } from "react-spinners";
+import { scroller } from "react-scroll";
 
 import { urlFor } from "../../../../client";
 import { sanityApiContext } from "../../../../store/sanity-api-context";
@@ -13,6 +14,22 @@ import classes from "./Main.module.css";
 const Main = () => {
   const { title, subtitle, menu, ltr, mainImg, mainImgMin } =
     useContext(sanityApiContext);
+
+  useEffect(() => {
+    let scrollTo = sessionStorage.getItem("main-page-scroll-to");
+    if (scrollTo) {
+      scroller.scrollTo(scrollTo, {
+        spy: true,
+        smooth: true,
+        offset: 200,
+        duration: 500,
+      });
+      setTimeout(() => {
+        sessionStorage.removeItem("main-page-scroll-to");
+      }, 2000);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessionStorage.getItem("main-page-scroll-to")]);
 
   return (
     <div id={menu && menu[0]} className={classes.main}>

@@ -15,9 +15,8 @@ const MenuItem = ({ title, isMobile }) => {
   const { height } = useContext(screenSizeContext);
 
   const menuItemClasses = !isMobile
-    ? `${classes["menu-item"]} ${
-        title !== "/" ? classes["menu-item-title"] : undefined
-      }`
+    ? `${classes["menu-item"]} ${title !== "/" ? classes["menu-item-title"] : undefined
+    }`
     : classes["menu-item-mobile"];
 
   const clickMenuItemHandler = () => {
